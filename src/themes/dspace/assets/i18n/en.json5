@@ -1,0 +1,24 @@
+{
+  // DSpace default: "All of DSpace"
+  "menu.section.browse_global": "Browse DSpace",
+
+  // DSpace default: "DSpace Angular :: "
+  "repository.title.prefix": "DSpace :: ",
+
+
+  "menu.section.browse_global_by_sampleid": "Sample ID",
+  "menu.section.browse_global_by_city": "City",
+  "menu.section.browse_global_by_state": "State",
+  "menu.section.browse_global_by_zip": "Zip Code",
+  "menu.section.browse_global_by_ispartofseries": "Series",
+  "menu.section.browse_global_by_thesisdegrees": "Degrees",
+
+  "browse.comcol.by.sampleid": "Sample ID",
+  "browse.comcol.by.city": "City",
+  "browse.comcol.by.state": "State",
+  "browse.comcol.by.zip": "Zip Code",
+  "browse.comcol.by.ispartofseries":  "Series",
+  "browse.comcol.by.thesisdegrees": "Degrees",
+
+  "submission.sections.submit.progressbar.describe.step1": "Describe",
+}
