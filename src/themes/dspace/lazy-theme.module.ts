@@ -55,8 +55,10 @@ import {
 } from '../../app/shared/resource-policies/resource-policies.module';
 import { ComcolModule } from '../../app/shared/comcol/comcol.module';
 import { RootModule } from '../../app/root.module';
+import { FeedbackComponent } from './app/info/feedback/feedback.component';
 
 const DECLARATIONS = [
+  FeedbackComponent,
 ];
 
 @NgModule({
