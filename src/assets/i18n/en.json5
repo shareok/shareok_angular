@@ -4605,4 +4605,20 @@
   "undergraduatepublication.listelement.badge": "Undergraduate",
 
   "undergraduatepublication.page.titleprefix": "Undergraduate Publication: ",
+
+  "info.feedback.contact.title": "Contact Us",
+
+  "info.feedback.contact.info": "SHAREOK administrators may be contacted at:",
+
+  "info.feedback.contact.institution_osu": "Oklahoma State University",
+
+  "info.feedback.contact.institution_ou": "University of Oklahoma",
+
+  "info.feedback.contact.institution_uco": "University of Central Oklahoma",
+
+  "info.feedback.contact.general_feedback": "General Feedback",
+
+  "info.feedback.contact.form_label": "Feedback form",
+
+  "info.feedback.contact.uco_email": "diwg@uco.edu",
 }
