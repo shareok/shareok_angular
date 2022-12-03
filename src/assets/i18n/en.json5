@@ -1314,7 +1314,7 @@
 
   "dso-selector.set-scope.community.head": "Select a search scope",
 
-  "dso-selector.set-scope.community.button": "Search all of DSpace",
+  "dso-selector.set-scope.community.button": "Search all of SHAREOK",
 
   "dso-selector.set-scope.community.input-header": "Search for a community or collection",
 
@@ -1620,7 +1620,7 @@
 
   "home.title": "Home",
 
-  "home.top-level-communities.head": "Communities in DSpace",
+  "home.top-level-communities.head": "Communities in SHAREOK",
 
   "home.top-level-communities.help": "Select a community to browse its collections.",
 
@@ -1652,7 +1652,7 @@
 
   "info.feedback.title": "Feedback",
 
-  "info.feedback.info": "Thanks for sharing your feedback about the DSpace system. Your comments are appreciated!",
+  "info.feedback.info": "Thanks for sharing your feedback about SHAREOK. Your comments are appreciated!",
 
   "info.feedback.email_help": "This address will be used to follow up on your feedback.",
 
@@ -2416,7 +2416,7 @@
 
   "login.form.forgot-password": "Have you forgotten your password?",
 
-  "login.form.header": "Please log in to DSpace",
+  "login.form.header": "Please log in to SHAREOK",
 
   "login.form.new-user": "New user? Click here to register.",
 
@@ -2436,7 +2436,7 @@
 
   "login.breadcrumbs": "Login",
 
-  "logout.form.header": "Log out from DSpace",
+  "logout.form.header": "Log out from SHAREOK",
 
   "logout.form.submit": "Log out",
 
@@ -2466,7 +2466,7 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "Browse DSpace",
+  "menu.section.browse_global": "Browse SHAREOK",
 
   "menu.section.browse_global_by_author": "By Author",
 
@@ -2680,7 +2680,7 @@
 
   "mydspace.view-btn": "View",
 
-  "nav.browse.header": "All of DSpace",
+  "nav.browse.header": "All of SHAREOK",
 
   "nav.community-browse.header": "By Community",
 
@@ -3046,7 +3046,7 @@
 
   "register-page.registration.header": "New user registration",
 
-  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to DSpace.",
+  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to SHAREOK.",
 
   "register-page.registration.email": "Email Address *",
 
@@ -3446,7 +3446,7 @@
 
   "search.form.search_dspace": "All repository",
 
-  "search.form.scope.all": "All of DSpace",
+  "search.form.scope.all": "All of SHAREOK",
 
   "search.results.head": "Search Results",
 
@@ -3578,7 +3578,7 @@
 
   "submission.import-external.title.none": "Import metadata from an external source",
 
-  "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to DSpace.",
+  "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to SHAREOK.",
 
   "submission.import-external.back-to-my-dspace": "Back to MyDSpace",
 
@@ -4240,7 +4240,7 @@
 
   "thumbnail.person.placeholder": "No Profile Picture Available",
 
-  title: "DSpace",
+  title: "SHAREOK",
 
   "vocabulary-treeview.header": "Hierarchical tree view",
 
