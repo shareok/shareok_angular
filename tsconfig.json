@@ -21,6 +21,8 @@
     "skipDefaultLibCheck": true,
     "pretty": true,
     "target": "es2015",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "typeRoots": [
       "node_modules/@types",
       "src/typings.d.ts"
