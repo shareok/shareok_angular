@@ -38,7 +38,7 @@
   <ng-container *ngFor="let option of allOptions">
     <ng-container *ngIf="!((option.label | translate)==='By Issue Date'||(option.label | translate)==='By Author'
     ||(option.label | translate)==='By Title'||(option.label | translate)==='By Subject'||(option.label | translate)==='By Series'
-    ||(option.label | translate)==='By Degree')">
+    ||(option.label | translate)==='Recent Submissions'||(option.label | translate)==='By Degree')">
       <a class="list-group-item"
       [routerLink]="option.routerLink"
       [queryParams]="option.params"
