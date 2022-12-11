@@ -55,7 +55,7 @@ export class LeafmapComponent implements OnInit, AfterViewInit {
       let latlng: [number,number] = [splitted[0].trim() as number,splitted[1].trim() as number];
       let url: string = "/handle/"+point.uri;
       markers.addLayer(L.marker(latlng).bindPopup(`
-      <a href="`+url+`">`+ point.sid + `<br>` + point.location + `</a>
+        <a href="${url}">${point.sid}<br>${point.location}</a>
       `)
       );
     }
