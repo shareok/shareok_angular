@@ -2466,7 +2466,7 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "Browse SHAREOK",
+  "menu.section.browse_global": "Browse DSpace",
 
   "menu.section.browse_global_by_author": "By Author",
 
@@ -4621,4 +4621,30 @@
   "info.feedback.contact.form_label": "Feedback form",
 
   "info.feedback.contact.uco_email": "diwg@uco.edu",
+
+  "item.page.form.header": "Sample Information",
+
+  "item.page.Legend.collectiondetail": "Collection Detail",
+
+  "item.page.Note.collectiondetail": "Additional information provided by the citizen scientist; specific details that could be used to determine the identity of an individual citizen scientist (such as a street address) have been removed from the publicly accessible version of the dataset.",
+
+  "item.page.Legend.internalcode": "Internal Code",
+
+  "item.page.Note.internalcode": "This is a number that is created and used by researchers to track samples in the laboratory.",
+
+  "item.page.Legend.isolatesfromrbm": "# of Isolates from RBM",
+
+  "item.page.Note.isolatesfromrbm": "Soil samples were applied to Petri plates containing food called RBM (Rose Bengal Malt Extract Agar) that enables fungi to grow (visit https://whatsinyourbackyard.org/process/ for more information about the fungal growth process); the value presented refers to the number of unique-appearing fungi estimated on the plate; when shown, the plate with the pinkish-red-colored background was made with RBM agar.",
+
+  "item.page.Legend.isolatesfromtv8": "# of Isolates from TV8",
+
+  "item.page.Note.isolatesfromtv8": "Soil samples were applied to Petri plates containing food called TV8 (V8 + Triton X-100 Agar) that enables fungi to grow (visit https://whatsinyourbackyard.org/process/ for more information about the fungal growth process); the value presented refers to the number of unique-appearing fungi estimated on the plate; when shown, the plate with the tan-colored background was made with TV8 agar.",
+
+  "item.page.Legend.photos": "Photos",
+
+  "item.page.Note.photos": "Most samples handled prior to May 2015 were processed using a different protocol and pictures were not recorded; if you provided a sample prior to this date, you are welcomed to request a new kit and submit a different sample to the program.",
+
+  "item.page.Legend.taxonomy": "Taxonomy",
+
+  "item.page.Note.taxonomy": "DNA samples are taken from the unique-appearing fungi and a portion of the DNA referred to as the ITS region is sequenced from each sample. The sequence information provides a reasonable approximation for the genus-level identities of most fungi. Additional DNA testing would be needed to fully resolve the species or sub-species identities of each fungus. Links to further information about the fungal genera are provided when available. When examining your results, bear in mind that fungi tend to be very diverse and fill many different roles in the environment. Just because a particular type of fungus found in your yard shares the same genus name with a plant or animal pathogen, it does not necessarily mean that the fungus in your sample is harmful.",
 }
