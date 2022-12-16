@@ -14,7 +14,6 @@ import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-
 import { ItemSharedModule } from '../../app/item-page/item-shared.module';
 import { LegendNoteComponent } from './app/item-page/simple/item-types/untyped-item/legend-note/legend-note.component';
 
-
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads

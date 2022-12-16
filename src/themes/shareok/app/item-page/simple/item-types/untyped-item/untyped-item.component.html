@@ -1,4 +1,4 @@
-<div class="row" *ngIf="iiifEnabled">
+  <div class="row" *ngIf="iiifEnabled">
     <div class="col-12">
       <ds-mirador-viewer id="iiif-viewer"
                      [object]="object"
@@ -8,6 +8,7 @@
     </div>
   </div>
   <div class="d-flex flex-row">
+    <h2>Sample</h2>&#10240;
     <ds-item-page-title-field [item]="object" class="mr-auto">
     </ds-item-page-title-field>
     <div class="pl-2 space-children-mr">
@@ -28,7 +29,7 @@
         <ds-media-viewer [item]="object" [videoOptions]="mediaViewer.video"></ds-media-viewer>
       </ng-container>
       <ds-themed-item-page-file-section [item]="object"></ds-themed-item-page-file-section>
-      <ds-item-page-date-field [item]="object"></ds-item-page-date-field>
+      <!-- <ds-item-page-date-field [item]="object"></ds-item-page-date-field>
       <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
         [parentItem]="object"
         [itemType]="'Person'"
@@ -50,15 +51,95 @@
       <ds-generic-item-page-field [item]="object"
         [fields]="['dc.publisher']"
         [label]="'item.page.publisher'">
-      </ds-generic-item-page-field>
+      </ds-generic-item-page-field> -->
     </div>
-    <div class="col-xs-12 col-md-6">
-      <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field>
+    <div class="col-xs-12 col-md-8">
+      <h3>Sample Information</h3>
+      <!-- <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field>
+
+      <div class="ds-table-responsive">
+        <table class="table table-striped table-hover">
+            <tbody>
+              <tr class="ds-table-row odd">
+                <td class="label-cell">
+                  <ds-generic-item-page-field [item]="object"
+                  [fields]="['']"
+                  [label]="'item.page.Legend.collectiondetail'">
+                  </ds-generic-item-page-field>
+                </td>
+                <td></td>
+                <td class="label-cell">
+                  <ds-generic-item-page-field [item]="object"
+                  [fields]="['dwc.npdg.detail']"
+                  [label]="''">
+                  </ds-generic-item-page-field>
+                </td>
+              </tr>
+              <tr class="ds-table-row even">
+                <td class="label-cell">
+                  <ds-generic-item-page-field [item]="object"
+                  [fields]="['']"
+                  [label]="'item.page.Legend.city'">
+                  </ds-generic-item-page-field>
+                </td>
+                <td></td>
+                <td class="label-cell">
+                  <ds-generic-item-page-field [item]="object"
+                  [fields]="['dwc.npdg.homecity']"
+                  [label]="''">
+                  </ds-generic-item-page-field>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+    </div> -->
+
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.detail']"
+        [label]="'item.page.Legend.collectiondetail'">
+      </ds-generic-item-page-field>
+
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.homecity']"
+        [label]="'item.page.Legend.city'">
+      </ds-generic-item-page-field>
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.homestate']"
+        [label]="'item.page.Legend.state'">
+      </ds-generic-item-page-field>
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.homezip']"
+        [label]="'item.page.Legend.zip'">
+      </ds-generic-item-page-field>
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.internalcode']"
+        [label]="'item.page.Legend.internalcode'">
+      </ds-generic-item-page-field>
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.isolatesRBM']"
+        [label]="'item.page.Legend.isolatesfromrbm'">
+      </ds-generic-item-page-field>
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.isolatesTV8']"
+        [label]="'item.page.Legend.isolatesfromtv8'">
+      </ds-generic-item-page-field>
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.sampleid']"
+        [label]="'item.page.Legend.sampleid'">
+      </ds-generic-item-page-field>
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dwc.npdg.imagestatus']"
+        [label]="'item.page.Legend.imagestatus'">
+      </ds-generic-item-page-field>
+      <ds-generic-item-page-field [item]="object"
+        [fields]="['dc.relation.wiki']"
+        [label]="'item.page.Legend.taxonomy'">
+      </ds-generic-item-page-field>
+
       <ds-generic-item-page-field [item]="object"
         [fields]="['dc.description']"
         [label]="'item.page.description'">
       </ds-generic-item-page-field>
-  
       <ds-generic-item-page-field [item]="object"
         [fields]="['dc.subject']"
         [separator]="','"

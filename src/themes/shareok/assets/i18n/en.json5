@@ -18,5 +18,10 @@
 	"item.page.Note.photos": "Most samples handled prior to May 2015 were processed using a different protocol and pictures were not recorded; if you provided a sample prior to this date, you are welcomed to request a new kit and submit a different sample to the program.",
 	"item.page.Legend.taxonomy": "Taxonomy",
 	"item.page.Note.taxonomy": "DNA samples are taken from the unique-appearing fungi and a portion of the DNA referred to as the ITS region is sequenced from each sample. The sequence information provides a reasonable approximation for the genus-level identities of most fungi. Additional DNA testing would be needed to fully resolve the species or sub-species identities of each fungus. Links to further information about the fungal genera are provided when available. When examining your results, bear in mind that fungi tend to be very diverse and fill many different roles in the environment. Just because a particular type of fungus found in your yard shares the same genus name with a plant or animal pathogen, it does not necessarily mean that the fungus in your sample is harmful.",
+	"item.page.Legend.city": "City",
+	"item.page.Legend.imagestatus": "Image Status",
+	"item.page.Legend.state": "State",
+	"item.page.Legend.zip": "Zip",
+	"item.page.Legend.sampleid": "Sample ID",
 
 }

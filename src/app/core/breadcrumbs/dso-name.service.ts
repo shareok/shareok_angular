@@ -42,7 +42,7 @@ export class DSONameService {
     },
     Default: (dso: DSpaceObject): string => {
       // If object doesn't have dc.title metadata use name property
-      return dso.firstMetadataValue('dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
+      return dso.firstMetadataValue('dc.title') || dso.firstMetadataValue('dwc.npdg.sampleid') || dso.name || this.translateService.instant('dso.name.untitled');
     }
   };
 
