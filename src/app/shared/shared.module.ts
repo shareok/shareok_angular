@@ -176,7 +176,11 @@ import {
 import {
   MetadataFieldWrapperComponent
 } from '../item-page/field-components/metadata-field-wrapper/metadata-field-wrapper.component';
+import {
+  MetadataCSFieldWrapperComponent
+} from '../item-page/field-components/metadata-csfield-wrapper/metadata-csfield-wrapper.component';
 import { MetadataValuesComponent } from '../item-page/field-components/metadata-values/metadata-values.component';
+import { MetadataCSValuesComponent } from '../item-page/field-components/metadata-csvalues/metadata-csvalues.component';
 import { RoleDirective } from './roles/role.directive';
 import { UserMenuComponent } from './auth-nav-menu/user-menu/user-menu.component';
 import {
@@ -289,6 +293,9 @@ import { BitstreamDownloadPageComponent } from './bitstream-download-page/bitstr
 import {
   GenericItemPageFieldComponent
 } from '../item-page/simple/field-components/specific-field/generic/generic-item-page-field.component';
+import {
+  CSGenericItemPageFieldComponent
+} from '../item-page/simple/field-components/specific-field/csgeneric/csgeneric-item-page-field.component';
 import {
   MetadataRepresentationListComponent
 } from '../item-page/simple/metadata-representation-list/metadata-representation-list.component';
@@ -582,12 +589,15 @@ const ENTRY_COMPONENTS = [
 
 const SHARED_ITEM_PAGE_COMPONENTS = [
   MetadataFieldWrapperComponent,
+  MetadataCSFieldWrapperComponent,
   MetadataValuesComponent,
+  MetadataCSValuesComponent,
   DsoPageEditButtonComponent,
   DsoPageVersionButtonComponent,
   PersonPageClaimButtonComponent,
   ItemAlertsComponent,
   GenericItemPageFieldComponent,
+  CSGenericItemPageFieldComponent,
   MetadataRepresentationListComponent,
   RelatedItemsComponent,
   DsoPageOrcidButtonComponent
