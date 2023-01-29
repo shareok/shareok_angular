@@ -55,11 +55,13 @@ import {
 } from '../../app/shared/resource-policies/resource-policies.module';
 import { ComcolModule } from '../../app/shared/comcol/comcol.module';
 import { RootModule } from '../../app/root.module';
+import { FileSectionComponent } from './app/item-page/simple/field-components/file-section/file-section.component';
 import { CollectionPageComponent } from './app/collection-page/collection-page.component';
 import { LeafmapComponent } from './app/collection-page/leafmap/leafmap.component';
 
 const DECLARATIONS = [
   CollectionPageComponent,
+  FileSectionComponent,
   LeafmapComponent,
 ];
 
