@@ -2466,7 +2466,7 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "Browse DSpace",
+  "menu.section.browse_global": "Browse SHAREOK",
 
   "menu.section.browse_global_by_author": "By Author",
 
@@ -4657,4 +4657,6 @@
   "item.page.Legend.zip": "Zip",
 
   "item.page.Legend.sampleid": "Sample ID",
+
+  "login.form.ouaccount": "Email / OUNetID",
 }

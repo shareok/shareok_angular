@@ -45,4 +45,6 @@
   "search.form.scope.all": "All of SHAREOK",
   "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to SHAREOK.",
   "title": "SHAREOK",
+
+  "login.form.ouaccount": "Email / OUNetID",
 }
