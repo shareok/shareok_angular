@@ -1,0 +1,50 @@
+{
+  // DSpace default: "All of DSpace"
+  "menu.section.browse_global": "Browse DSpace",
+
+  // DSpace default: "DSpace Angular :: "
+  "repository.title.prefix": "DSpace :: ",
+
+
+  "menu.section.browse_global_by_sampleid": "By SampleID",
+  "menu.section.browse_global_by_city": "By City",
+  "menu.section.browse_global_by_state": "By State",
+  "menu.section.browse_global_by_zip": "By ZipCode",
+  "menu.section.browse_global_by_ispartofseries": "By Series",
+  "menu.section.browse_global_by_thesisdegrees": "By Degree",
+
+  "browse.comcol.by.sampleid": "By SampleID",
+  "browse.comcol.by.city": "By City",
+  "browse.comcol.by.state": "By State",
+  "browse.comcol.by.zip": "By ZipCode",
+  "browse.comcol.by.ispartofseries":  "By Series",
+  "browse.comcol.by.thesisdegrees": "By Degree",
+
+  "submission.sections.submit.progressbar.describe.step1": "Describe",
+
+  "undergraduatepublication.listelement.badge": "Undergraduate",
+  "undergraduatepublication.page.titleprefix": "Undergraduate Publication: ",
+  "info.feedback.contact.title": "Contact Us",
+  "info.feedback.contact.info": "SHAREOK administrators may be contacted at:",
+  "info.feedback.contact.institution_osu": "Oklahoma State University",
+  "info.feedback.contact.institution_ou": "University of Oklahoma",
+  "info.feedback.contact.institution_uco": "University of Central Oklahoma",
+  "info.feedback.contact.general_feedback": "General Feedback",
+  "info.feedback.contact.form_label": "Feedback form",
+  "info.feedback.contact.uco_email": "diwg@uco.edu",
+
+  // DSpace changed to SHAREOK
+  "dso-selector.set-scope.community.button": "Search all of SHAREOK",
+  "home.top-level-communities.head": "Communities in SHAREOK",
+  "info.feedback.info": "Thanks for sharing your feedback about SHAREOK. Your comments are appreciated!",
+  "login.form.header": "Please log in to SHAREOK",
+  "logout.form.header": "Log out from SHAREOK",
+  "menu.section.browse_global": "Browse SHAREOK",
+  "nav.browse.header": "All of SHAREOK",
+  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to SHAREOK.",
+  "search.form.scope.all": "All of SHAREOK",
+  "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to SHAREOK.",
+  "title": "SHAREOK",
+
+  "login.form.ouaccount": "Email / OUNetID",
+}

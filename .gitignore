@@ -39,3 +39,7 @@ package-lock.json
 /nbproject/
 
 junit.xml
+
+points.json
+
+dspace-ui.json
