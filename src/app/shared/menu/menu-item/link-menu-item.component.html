@@ -1,12 +1,16 @@
-
-<a class="nav-item nav-link"
-   [ngClass]="{ 'disabled': !hasLink || item.disabled }"
-   [attr.aria-disabled]="!hasLink || item.disabled"
-   [title]="item.text | translate"
-   [routerLink]="getRouterLink()"
-   [queryParams]="item.queryParams"
-   (click)="$event.stopPropagation()"
-   (keyup.space)="navigate($event)"
-   (keyup.enter)="navigate($event)"
-   href="javascript:void(0);"
->{{item.text | translate}}</a>
+<ng-container *ngIf="!((item.text | translate)==='By SampleID'
+         ||(item.text | translate)==='By City'
+         ||(item.text | translate)==='By State'
+         ||(item.text | translate)==='By ZipCode')">
+   <a class="nav-item nav-link"
+      [ngClass]="{ 'disabled': !hasLink || item.disabled }"
+      [attr.aria-disabled]="!hasLink || item.disabled"
+      [title]="item.text | translate"
+      [routerLink]="getRouterLink()"
+      [queryParams]="item.queryParams"
+      (click)="$event.stopPropagation()"
+      (keyup.space)="navigate($event)"
+      (keyup.enter)="navigate($event)"
+      href="javascript:void(0);"
+   >{{item.text | translate}}</a>
+</ng-container>
