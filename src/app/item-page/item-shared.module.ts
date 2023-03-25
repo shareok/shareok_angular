@@ -11,6 +11,7 @@ import { ItemVersionsDeleteModalComponent } from './versions/item-versions-delet
 import { ItemVersionsSummaryModalComponent } from './versions/item-versions-summary-modal/item-versions-summary-modal.component';
 import { MetadataValuesComponent } from './field-components/metadata-values/metadata-values.component';
 import { GenericItemPageFieldComponent } from './simple/field-components/specific-field/generic/generic-item-page-field.component';
+import { CSGenericItemPageFieldComponent } from './simple/field-components/specific-field/csgeneric/csgeneric-item-page-field.component';
 import { MetadataRepresentationListComponent } from './simple/metadata-representation-list/metadata-representation-list.component';
 import { RelatedItemsComponent } from './simple/related-items/related-items-component';
 
@@ -26,6 +27,7 @@ const COMPONENTS = [
   TabbedRelatedEntitiesSearchComponent,
   MetadataValuesComponent,
   GenericItemPageFieldComponent,
+  CSGenericItemPageFieldComponent,
   MetadataRepresentationListComponent,
   RelatedItemsComponent,
 ];

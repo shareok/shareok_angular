@@ -1,0 +1,4 @@
+<tr class="ds-table-row" [class.d-none]="hideIfNoTextContent && content.textContent.trim().length === 0">
+  <td class="label-cell" *ngIf="label">{{ label }}</td>
+  <td class="label-cell" #content><ng-content></ng-content></td>
+</tr>

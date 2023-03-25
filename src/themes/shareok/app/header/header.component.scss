@@ -1,0 +1,35 @@
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+  nav.navbar {
+    display: none;
+  }
+  .header {
+    background-color: var(--ds-header-bg);
+  }
+}
+
+.navbar-brand img {
+  @media screen and (max-width: map-get($grid-breakpoints, md)) {
+    height: var(--ds-header-logo-height-xs);
+  }
+}
+.navbar-toggler .navbar-toggler-icon {
+  background-image: none !important;
+  line-height: 1.5;
+  color: var(--bs-link-color);
+}
+
+header .navbar-default {
+  height: inherit;
+  background-color: #1F3F5E;
+}
+
+header .navbar {
+  color: #9d9d9d;
+  margin-bottom: 0px;
+  border: none;
+}
+
+header .navbar-default .navbar-brand {
+  color: #eee;
+  height: inherit;
+}
