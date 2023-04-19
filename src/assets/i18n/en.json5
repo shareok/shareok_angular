@@ -5105,4 +5105,6 @@
   "undpublication.listelement.badge": "Undergraduate",
 
   "undpublication.page.titleprefix": "Undergraduate Publication: ",
+
+  "submission.sections.upload.drop-message.help": "Please follow the recommended format of: <yyyy>_<lastname>_<firstname>_<middle>_<document type>. For example: 2016_Doe_John_Dissertation.pdf",
 }

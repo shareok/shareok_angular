@@ -233,4 +233,15 @@ export class SubmissionFormComponent implements OnChanges, OnDestroy {
       filter((sections: SectionDataObject[]) => isNotEmpty(sections)),
       map((sections: SectionDataObject[]) => sections));
   }
+
+  /**
+   * Add additional instructions for OU - Theses and OU - Dissertation
+   */
+  public displayUploadInstruction() {
+    let message = '';
+    if(this.collectionId === 'c277530b-5e3d-43fe-97f3-9a53ec1062ae'|| this.collectionId === 'b55afbbf-fc3f-4159-a38e-e8533c32685d') {
+      message = 'submission.sections.upload.drop-message.help';
+    }
+    return message;
+  }
 }
