@@ -55,6 +55,7 @@ import {
 } from '../../app/shared/resource-policies/resource-policies.module';
 import { ComcolModule } from '../../app/shared/comcol/comcol.module';
 import { RootModule } from '../../app/root.module';
+import { FileSectionComponent } from './app/item-page/simple/field-components/file-section/file-section.component';
 import { FeedbackFormComponent } from './app/info/feedback/feedback-form/feedback-form.component';
 import { FeedbackComponent } from './app/info/feedback/feedback.component';
 import { BrowseByPageModule } from '../../app/browse-by/browse-by-page.module';
@@ -66,6 +67,7 @@ import { ItemSharedModule } from 'src/app/item-page/item-shared.module';
 const DECLARATIONS = [
   FeedbackFormComponent,
   FeedbackComponent,
+  FileSectionComponent,
 ];
 
 @NgModule({
