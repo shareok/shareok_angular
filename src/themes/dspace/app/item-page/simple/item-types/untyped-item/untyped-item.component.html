@@ -16,7 +16,6 @@
 </div>
 <div class="row">
   <div class="col-xs-12 col-md-4">
-    HAVE A LOT METADATA TO DISPLAY HERE!
     <ng-container *ngIf="!mediaViewer.image">
       <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
         <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
@@ -49,8 +48,9 @@
       [fields]="['dc.publisher']"
       [label]="'item.page.publisher'">
     </ds-generic-item-page-field>
-    <div>http://localhost:4000/items/266d9d6b-cd84-499f-a19b-7f98307b547c/</div>
-    <div class='altmetric-embed' data-badge-type='donut' data-condensed='true' data-badge-details='right' data-handle="11244/25501"></div>
+    <ds-altmetric-badge-field [item]="object"
+      [fields]="['dc.identifier.doi']">
+    </ds-altmetric-badge-field>
   </div>
   <div class="col-xs-12 col-md-6">
     <ds-item-page-abstract-field [item]="object"></ds-item-page-abstract-field>
