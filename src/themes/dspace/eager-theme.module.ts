@@ -12,7 +12,7 @@ import { ResultsBackButtonModule } from '../../app/shared/results-back-button/re
 import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { ItemSharedModule } from '../../app/item-page/item-shared.module';
-import { AlmetricBadgeComponent } from './app/item-page/simple/item-types/untyped-item/almetric-badge/almetric-badge.component';
+import { AltmetricBadgeComponent } from './app/item-page/simple/item-types/untyped-item/altmetric-badge/altmetric-badge.component';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -20,7 +20,7 @@ import { AlmetricBadgeComponent } from './app/item-page/simple/item-types/untype
  */
 const ENTRY_COMPONENTS = [
   UntypedItemComponent,
-  AlmetricBadgeComponent
+  AltmetricBadgeComponent
 ];
 
 const DECLARATIONS = [

@@ -5,10 +5,10 @@ import { MetadataValue } from 'src/app/core/shared/metadata.models';
 
 @Component({
   selector: 'ds-altmetric-badge-field',
-  styleUrls: ['./almetric-badge.component.scss'],
-  templateUrl: './almetric-badge.component.html',
+  styleUrls: ['./altmetric-badge.component.scss'],
+  templateUrl: './altmetric-badge.component.html',
 })
-export class AlmetricBadgeComponent implements OnInit {
+export class AltmetricBadgeComponent implements OnInit {
 
   @Input() item: Item;
   @Input() fields: string[];
