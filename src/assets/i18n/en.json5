@@ -4340,7 +4340,7 @@
 
   "submission.sections.upload.download.title": "Download bitstream",
 
-  "submission.sections.upload.drop-message": "Drop files to attach them to the item",
+  "submission.sections.upload.drop-message": "Drag and drop files",
 
   "submission.sections.upload.edit.title": "Edit bitstream",
 
@@ -5106,5 +5106,7 @@
 
   "undpublication.page.titleprefix": "Undergraduate Publication: ",
 
-  "submission.sections.upload.drop-message.help": "Please follow the recommended format of: <yyyy>_<lastname>_<firstname>_<middle>_<document type>. For example: 2016_Doe_John_Dissertation.pdf",
+  "submission.sections.upload.drop-message.help": "Please upload two files: your thesis/dissertation in its original file format (e.g. Word, LaTex, etc.) and as a PDF, and follow the recommended format of: <yyyy>_<lastname>_<firstname>_<middle>_<document type>. For example: 2016_Doe_John_Dissertation.pdf",
+
+  "submission.sections.upload.drop-message-fs.help": "Please upload the file(s) you wish to submit to SHAREOK.",
 }
