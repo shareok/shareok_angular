@@ -5109,4 +5109,6 @@
   "submission.sections.upload.drop-message.help": "Please upload two files: your thesis/dissertation in its original file format (e.g. Word, LaTex, etc.) and as a PDF, and follow the recommended format of: <yyyy>_<lastname>_<firstname>_<middle>_<document type>. For example: 2016_Doe_John_Dissertation.pdf",
 
   "submission.sections.upload.drop-message-fs.help": "Please upload the file(s) you wish to submit to SHAREOK.",
+
+  "item.relation-ou.uri": "Related file",
 }
