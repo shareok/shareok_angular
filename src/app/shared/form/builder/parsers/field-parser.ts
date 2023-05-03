@@ -295,7 +295,12 @@ export abstract class FieldParser {
     if (hint) {
       controlModel.hint = this.configData.hints || '&nbsp;';
     }
-    controlModel.placeholder = this.configData.label;
+
+    if(this.configData.label === 'Related File URL' && controlModel.id === 'dc_relation_uri') {
+      controlModel.placeholder = 'https://shareok.org/handle/11244/12345 OR https://shareok.org/items/96e3735b-07bf-455e-9583-ef01de61e656';
+    } else {
+      controlModel.placeholder = this.configData.label;
+    }
 
     if (this.configData.mandatory && setErrors) {
       this.markAsRequired(controlModel);
