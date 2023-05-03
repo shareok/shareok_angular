@@ -5111,4 +5111,8 @@
   "submission.sections.upload.drop-message-fs.help": "Please upload the file(s) you wish to submit to SHAREOK.",
 
   "item.relation-ou.uri": "Related file",
+
+  "item.description.notes": "Notes",
+
+  "item.description-ou.sponsorship": "Sponsorship",
 }
