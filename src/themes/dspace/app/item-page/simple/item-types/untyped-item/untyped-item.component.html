@@ -80,12 +80,7 @@
       [fields]="['dc.description.notes']"
       [label]="'item.description.notes'">
     </ds-generic-item-page-field>
-    <ng-container>
-      <ds-generic-item-page-field [item]="object"
-        [fields]="['dc.description.sponsorship']"
-        [label]="'item.description-ou.sponsorship'">
-      </ds-generic-item-page-field>
-    </ng-container>
+    <ds-item-page-sponsorship-field [item]="object"></ds-item-page-sponsorship-field>
     <ds-item-page-collections [item]="object"></ds-item-page-collections>
     <div>
       <a class="btn btn-outline-primary" [routerLink]="[itemPageRoute + '/full']" role="button">
