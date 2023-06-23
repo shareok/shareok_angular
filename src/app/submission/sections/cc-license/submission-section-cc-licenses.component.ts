@@ -70,6 +70,14 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
    */
   defaultJurisdiction: string;
 
+  selectChoice: string;
+
+  CC_CHOOSERS = [
+    {id: 0, choice: 'I already know which Creative Commons license I want to apply'},
+    {id: 1, choice: 'I want to use the Creative Commons license chooser'},
+    {id: 2, choice: 'I do not wish to apply a Creative Commons license at this time'}
+  ];
+
   /**
    * The Creative Commons link saved in the workspace item.
    */
@@ -128,6 +136,19 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
       },
       uri: undefined,
     });
+  }
+
+  onSelectChoice(id: number) {
+    if(id === 0){
+      this.selectChoice = 'c0';
+      // this.isSelectedOption(this.submissionCcLicenses[0], field, option);
+    }
+    if(id === 1){
+      this.selectChoice = 'c1';
+    }
+    if(id === 2){
+      this.selectChoice = 'c2';
+    }
   }
 
   /**
