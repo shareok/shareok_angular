@@ -148,6 +148,7 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
     }
     if(id === 2){
       this.selectChoice = 'c2';
+      this.setAccepted(false);
     }
   }
 

@@ -22,45 +22,45 @@
 </div>
 
 <ng-container *ngIf="selectChoice=='c0'; else licensetypes">
-  "selectChoice : " {{selectChoice}}
+  <p>License Type:</p>
   <div class="col">
     <p></p>
     <div class="col-sm-12">
-      <div class="radio">
+      <div>
         <input name="licensetype_chooser" type="radio" class="mr-1" value="cc0"
           (change)="selectCcLicense(submissionCcLicenses[0])"><span>CC0</span>
       </div>
-      <div>
-        <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc1"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"><span>CC
-            BY</span></div>
-        <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc2"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[1])"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"><span>CC
-            BY-SA</span></div>
-        <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc3"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"><span>CC
-            BY-NC</span></div>
-        <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc4"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[2])"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"><span>CC
-            BY-ND</span></div>
-        <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc5"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[1])"
-            (change)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"><span>CC
-            BY-NC-SA</span></div>
-        <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc6"
-            (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[2])"
-            (change)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"><span>CC BY-NC-ND</span>
-        </div>
+      <div (click)="selectOption(getSelectedCcLicense(), submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"><input name="licensetype_chooser" type="radio" class="mr-1" value="cc1"
+          (change)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"
+          (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"><span>CC
+          BY</span></div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc2"
+          (change)="selectCcLicense(submissionCcLicenses[1])"
+          (change)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[1])"
+          (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"><span>CC
+          BY-SA</span></div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc3"
+          (change)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"
+          (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"><span>CC
+          BY-NC</span></div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc4"
+          (change)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[2])"
+          (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"><span>CC
+          BY-ND</span></div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc5"
+          (change)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[1])"
+          (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"><span>CC
+          BY-NC-SA</span></div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc6"
+          (change)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[2])"
+          (click)="selectOption(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"><span>CC
+          BY-NC-ND</span>
+      </div>
 
         <!-- <div *ngFor="let option of field.enums">
                 <input name="licensetype_chooser" type="radio" class="mr-1" value="cc1"
                   [checked]="isSelectedOption(submissionCcLicenses[1], field, option)"><span>By {{option.label}}</span>
               </div> -->
-      </div>
     </div>
   </div>
 </ng-container>
