@@ -141,7 +141,6 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
   onSelectChoice(id: number) {
     if(id === 0){
       this.selectChoice = 'c0';
-      // this.isSelectedOption(this.submissionCcLicenses[0], field, option);
     }
     if(id === 1){
       this.selectChoice = 'c1';
@@ -172,6 +171,29 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
     if (this.isSelectedOption(ccLicense, field, option)) {
       return;
     }
+    this.updateSectionData({
+      ccLicense: {
+        id: ccLicense.id,
+        fields: Object.assign({}, this.data.ccLicense.fields, {
+          [field.id]: option
+        }),
+      },
+      accepted: false,
+    });
+  }
+
+  selectChooser(ccLicense: SubmissionCcLicence, field: Field, option: Option) {
+    if(!this.data.ccLicense?.fields) {
+      this.updateSectionData({
+        ccLicense: {
+          id: ccLicense.id,
+          fields: {},
+        },
+        uri: undefined,
+      });
+    }
+
+    this.setAccepted(false);
     this.updateSectionData({
       ccLicense: {
         id: ccLicense.id,
