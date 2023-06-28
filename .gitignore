@@ -40,4 +40,6 @@ package-lock.json
 
 junit.xml
 
-/src/mirador-viewer/config.local.js
+points.json
+
+dspace-ui.json
