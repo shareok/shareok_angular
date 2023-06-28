@@ -148,6 +148,7 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
     if(id === 2){
       this.selectChoice = 'c2';
       this.setAccepted(false);
+
     }
   }
 
@@ -225,6 +226,27 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
    */
   isSelectedOption(ccLicense: SubmissionCcLicence, field: Field, option: Option): boolean {
     return this.getSelectedOption(ccLicense, field) && this.getSelectedOption(ccLicense, field).id === option.id;
+  }
+
+  selectedChooser(): string {
+    if(Object.keys(this.data.ccLicense.fields).length===0 && this.data.ccLicense.id==='zero' ) {
+      return 'cc0';
+    } else if(this.data.ccLicense.fields['commercial'] && this.data.ccLicense.fields['derivatives']) {
+      if (this.data.ccLicense.fields['commercial'].id === 'y' && this.data.ccLicense.fields['derivatives'].id === 'y') {
+        return 'cc1';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'y' && this.data.ccLicense.fields['derivatives'].id === 'sa') {
+        return 'cc2';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'n' && this.data.ccLicense.fields['derivatives'].id === 'y') {
+        return 'cc3';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'y' && this.data.ccLicense.fields['derivatives'].id === 'n') {
+        return 'cc4';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'n' && this.data.ccLicense.fields['derivatives'].id === 'sa') {
+        return 'cc5';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'n' && this.data.ccLicense.fields['derivatives'].id === 'n') {
+        return 'cc6';
+      }
+    }
+    return null;
   }
 
   /**

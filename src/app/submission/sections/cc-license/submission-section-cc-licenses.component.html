@@ -1,11 +1,11 @@
 <p>If you wish, you may add a <a href='https://creativecommons.org/'>Creative Commons</a> License to your item. <strong>Creative Commons licenses govern what people who read your work may then do with it. You will still retain your copyright with most Creative Commons licenses.</strong></p>
 
 <div class="mb-4 ccLicense-select">
-  <span *ngIf="!submissionCcLicenses">
-    <ds-themed-loading></ds-themed-loading>
-  </span>
   <ng-container class="menu">
-    <div *ngFor="let license of submissionCcLicenses; let i = index">
+      <span *ngIf="!submissionCcLicenses">
+        <ds-themed-loading></ds-themed-loading>
+      </span>
+      <div *ngFor="let license of submissionCcLicenses; let i = index">
       <input type="radio"
               class="mr-1"
               name="license.name"
@@ -31,39 +31,46 @@
     <div class="col-sm-12">
       <div>
         <input name="licensetype_chooser" type="radio" class="mr-1" value="cc0"
-          (change)="selectCcLicense(submissionCcLicenses[0])">
+          (change)="selectCcLicense(submissionCcLicenses[0])"
+          [checked]="selectedChooser()==='cc0'">
           <span>CC0</span>
       </div>
       <div>
         <input name="licensetype_chooser" type="radio" class="mr-1" value="cc1"
         (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"
-        (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])">
+        (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"
+        [checked]="selectedChooser()==='cc1'">
         <span>CC BY</span>
       </div>
       <div>
         <input name="licensetype_chooser" type="radio" class="mr-1" value="cc2"
           (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[1])"
-          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])">
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"
+          [checked]="selectedChooser()==='cc2'">
           <span>CC BY-SA</span>
       </div>
       <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc3"
           (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"
-          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])">
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"
+          [checked]="selectedChooser()==='cc3'">
           <span>CC BY-NC</span>
       </div>
       <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc4"
           (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[2])"
-          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])">
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"
+          [checked]="selectedChooser()==='cc4'">
           <span>CC BY-ND</span>
       </div>
       <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc5"
           (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[1])"
-          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])">
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"
+          [checked]="selectedChooser()==='cc5'">
           <span>CC BY-NC-SA</span>
       </div>
       <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc6"
           (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[2])"
-          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])">
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"
+          [checked]="selectedChooser()==='cc6'">
           <span>CC BY-NC-ND</span>
       </div>
     </div>
@@ -174,7 +181,8 @@
         <div (click)="setAccepted(!accepted)">
           <input type="checkbox"
                  title="accepted"
-                 [checked]="accepted">
+                 [checked]="accepted"
+                 [disabled]="selectChoice==='c2'">
           <span> {{ 'submission.sections.ccLicense.confirmation' | translate }}</span>
         </div>
       </div>
