@@ -13,6 +13,7 @@ import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { ItemSharedModule } from '../../app/item-page/item-shared.module';
 import { AltmetricBadgeComponent } from './app/item-page/simple/item-types/untyped-item/altmetric-badge/altmetric-badge.component';
+import { ItemPageCclicenseFieldComponent } from './app/item-page/simple/item-types/untyped-item/cclicense-field/item-page-cclicense-field.component';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -20,7 +21,8 @@ import { AltmetricBadgeComponent } from './app/item-page/simple/item-types/untyp
  */
 const ENTRY_COMPONENTS = [
   UntypedItemComponent,
-  AltmetricBadgeComponent
+  AltmetricBadgeComponent,
+  ItemPageCclicenseFieldComponent
 ];
 
 const DECLARATIONS = [

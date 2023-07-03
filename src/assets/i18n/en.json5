@@ -5115,4 +5115,8 @@
   "item.description.notes": "Notes",
 
   "item.description-ou.sponsorship": "Sponsorship",
+
+  "item.rights.cclicense": "Creative Commons",
+
+  "item.cclicense.message": "Except where otherwise noted, this item's license is described as ",
 }

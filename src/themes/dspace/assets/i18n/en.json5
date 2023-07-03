@@ -55,4 +55,7 @@
   "item.relation-ou.uri": "Related file",
   "item.description.notes": "Notes",
   "item.description-ou.sponsorship": "Sponsorship",
+  "item.rights.cclicence": "Creative Commons",
+  "item.cclicense.message": "Except where otherwise noted, this item's license is described as ",
+
 }
