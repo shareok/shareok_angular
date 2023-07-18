@@ -72,6 +72,8 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
 
   selectChoice: string;
 
+  existinglinkType: string;
+
   CC_CHOOSERS = [
     {id: 0, choice: 'I already know which Creative Commons license I want to apply'},
     {id: 1, choice: 'I want to use the Creative Commons license chooser'},
@@ -141,6 +143,7 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
   onSelectChoice(id: number) {
     if(id === 0){
       this.selectChoice = 'c0';
+      this.getExitingChooser();
     }
     if(id === 1){
       this.selectChoice = 'c1';
@@ -148,7 +151,6 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
     if(id === 2){
       this.selectChoice = 'c2';
       this.setAccepted(false);
-
     }
   }
 
@@ -247,6 +249,32 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
       }
     }
     return null;
+  }
+
+  getExitingChooser() {
+    this.getCcLicenseLink$().subscribe(link => this.getExistingLicenseType(link));
+  }
+
+  getExistingLicenseType(link: string) {
+    if (link !== null) {
+      if(link.includes("publicdomain/zero/")) {
+        this.existinglinkType = 'cc0';
+      } else if (link.includes("licenses/by/")) {
+        this.existinglinkType = 'cc1';
+      } else if (link.includes("licenses/by-sa/")) {
+        this.existinglinkType = 'cc2';
+      } else if (link.includes("licenses/by-nc/")) {
+        this.existinglinkType = 'cc3';
+      } else if (link.includes("licenses/by-nd/")) {
+        this.existinglinkType = 'cc4';
+      } else if (link.includes("licenses/by-nc-sa/")) {
+        this.existinglinkType = 'cc5';
+      } else if (link.includes("licenses/by-nc-nd/")) {
+        this.existinglinkType = 'cc6';
+      } else {
+        this.existinglinkType = null;
+      }
+    }
   }
 
   /**
