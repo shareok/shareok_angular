@@ -70,6 +70,16 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
    */
   defaultJurisdiction: string;
 
+  selectChoice: string;
+
+  existinglinkType: string;
+
+  CC_CHOOSERS = [
+    {id: 0, choice: 'I already know which Creative Commons license I want to apply'},
+    {id: 1, choice: 'I want to use the Creative Commons license chooser'},
+    {id: 2, choice: 'I do not wish to apply a Creative Commons license at this time'}
+  ];
+
   /**
    * The Creative Commons link saved in the workspace item.
    */
@@ -130,6 +140,20 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
     });
   }
 
+  onSelectChoice(id: number) {
+    if(id === 0){
+      this.selectChoice = 'c0';
+      this.getExitingChooser();
+    }
+    if(id === 1){
+      this.selectChoice = 'c1';
+    }
+    if(id === 2){
+      this.selectChoice = 'c2';
+      this.setAccepted(false);
+    }
+  }
+
   /**
    * Get the selected Creative Commons license.
    */
@@ -161,6 +185,29 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
     });
   }
 
+  selectChooser(ccLicense: SubmissionCcLicence, field: Field, option: Option) {
+    if(!this.data.ccLicense?.fields) {
+      this.updateSectionData({
+        ccLicense: {
+          id: ccLicense.id,
+          fields: {},
+        },
+        uri: undefined,
+      });
+    }
+
+    this.setAccepted(false);
+    this.updateSectionData({
+      ccLicense: {
+        id: ccLicense.id,
+        fields: Object.assign({}, this.data.ccLicense.fields, {
+          [field.id]: option
+        }),
+      },
+      accepted: false,
+    });
+  }
+
   /**
    * Get the selected option for a given license field.
    * @param ccLicense   the related Creative Commons license.
@@ -181,6 +228,53 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
    */
   isSelectedOption(ccLicense: SubmissionCcLicence, field: Field, option: Option): boolean {
     return this.getSelectedOption(ccLicense, field) && this.getSelectedOption(ccLicense, field).id === option.id;
+  }
+
+  selectedChooser(): string {
+    if(Object.keys(this.data.ccLicense.fields).length===0 && this.data.ccLicense.id==='zero' ) {
+      return 'cc0';
+    } else if(this.data.ccLicense.fields['commercial'] && this.data.ccLicense.fields['derivatives']) {
+      if (this.data.ccLicense.fields['commercial'].id === 'y' && this.data.ccLicense.fields['derivatives'].id === 'y') {
+        return 'cc1';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'y' && this.data.ccLicense.fields['derivatives'].id === 'sa') {
+        return 'cc2';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'n' && this.data.ccLicense.fields['derivatives'].id === 'y') {
+        return 'cc3';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'y' && this.data.ccLicense.fields['derivatives'].id === 'n') {
+        return 'cc4';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'n' && this.data.ccLicense.fields['derivatives'].id === 'sa') {
+        return 'cc5';
+      } else if (this.data.ccLicense.fields['commercial'].id === 'n' && this.data.ccLicense.fields['derivatives'].id === 'n') {
+        return 'cc6';
+      }
+    }
+    return null;
+  }
+
+  getExitingChooser() {
+    this.getCcLicenseLink$().subscribe(link => this.getExistingLicenseType(link));
+  }
+
+  getExistingLicenseType(link: string) {
+    if (link !== null) {
+      if(link.includes("publicdomain/zero/")) {
+        this.existinglinkType = 'cc0';
+      } else if (link.includes("licenses/by/")) {
+        this.existinglinkType = 'cc1';
+      } else if (link.includes("licenses/by-sa/")) {
+        this.existinglinkType = 'cc2';
+      } else if (link.includes("licenses/by-nc/")) {
+        this.existinglinkType = 'cc3';
+      } else if (link.includes("licenses/by-nd/")) {
+        this.existinglinkType = 'cc4';
+      } else if (link.includes("licenses/by-nc-sa/")) {
+        this.existinglinkType = 'cc5';
+      } else if (link.includes("licenses/by-nc-nd/")) {
+        this.existinglinkType = 'cc6';
+      } else {
+        this.existinglinkType = null;
+      }
+    }
   }
 
   /**

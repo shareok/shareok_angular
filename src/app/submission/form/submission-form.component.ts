@@ -18,8 +18,8 @@ import { Item } from '../../core/shared/item.model';
 import { SectionsType } from '../sections/sections-type';
 import { SectionsService } from '../sections/sections.service';
 import { SubmissionError } from '../objects/submission-error.model';
-import { SubmissionSectionVisibility } from './../../core/config/models/config-submission-section.model';
-import { SubmissionSectionModel } from './../../core/config/models/config-submission-section.model';
+import { SubmissionSectionVisibility } from '../../core/config/models/config-submission-section.model';
+import { SubmissionSectionModel } from '../../core/config/models/config-submission-section.model';
 import { VisibilityType } from '../sections/visibility-type';
 import isEqual from 'lodash/isEqual';
 
@@ -282,5 +282,19 @@ export class SubmissionFormComponent implements OnChanges, OnDestroy {
       map((sections: SectionDataObject[]) =>
         sections.filter((section: SectionDataObject) => !isEqual(section.sectionType,SectionsType.Collection))),
     );
+  }
+
+  /**
+   * Add additional instructions for OU - Theses and OU - Dissertation
+   */
+  public displayUploadInstruction() {
+    let message = '';
+    if(this.collectionId === 'c277530b-5e3d-43fe-97f3-9a53ec1062ae'|| this.collectionId === 'b55afbbf-fc3f-4159-a38e-e8533c32685d') {
+      message = 'submission.sections.upload.drop-message.help';
+    }
+    if(this.collectionId === 'b5b4c0fc-d955-42b7-909c-5e8f498d8a7a'|| this.collectionId === 'eef06b97-b9c3-4236-82d1-6f961bc8fb4b') {
+      message = 'submission.sections.upload.drop-message-fs.help';
+    }
+    return message;
   }
 }

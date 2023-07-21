@@ -24,3 +24,19 @@
     color: var(--ds-header-icon-color-hover);
   }
 }
+
+header .navbar-default {
+  height: inherit;
+  background-color: #1F3F5E;
+}
+
+header .navbar {
+  color: #9d9d9d;
+  margin-bottom: 0px;
+  border: none;
+}
+
+header .navbar-default .navbar-brand {
+  color: #eee;
+  height: inherit;
+}

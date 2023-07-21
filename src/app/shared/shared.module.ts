@@ -143,6 +143,7 @@ import {
 import {
   ThemedEditCollectionSelectorComponent
 } from './dso-selector/modal-wrappers/edit-collection-selector/themed-edit-collection-selector.component';
+import { MetadataCSValuesComponent } from '../item-page/field-components/metadata-csvalues/metadata-csvalues.component';
 import { RoleDirective } from './roles/role.directive';
 import { UserMenuComponent } from './auth-nav-menu/user-menu/user-menu.component';
 import {
@@ -252,7 +253,9 @@ import {
 } from './object-list/listable-notification-object/listable-notification-object.component';
 import { ThemedCollectionDropdownComponent } from './collection-dropdown/themed-collection-dropdown.component';
 import { MetadataFieldWrapperComponent } from './metadata-field-wrapper/metadata-field-wrapper.component';
-
+import {
+  MetadataCSFieldWrapperComponent
+} from '../item-page/field-components/metadata-csfield-wrapper/metadata-csfield-wrapper.component';
 import { StatusBadgeComponent } from './object-collection/shared/badges/status-badge/status-badge.component';
 import { BadgesComponent } from './object-collection/shared/badges/badges.component';
 import { ThemedBadgesComponent } from './object-collection/shared/badges/themed-badges.component';
@@ -397,6 +400,7 @@ const COMPONENTS = [
   ListableNotificationObjectComponent,
   DsoPageSubscriptionButtonComponent,
   MetadataFieldWrapperComponent,
+  MetadataCSFieldWrapperComponent,
   ContextHelpWrapperComponent,
   EpersonGroupListComponent,
   EpersonSearchBoxComponent,
@@ -481,6 +485,7 @@ const DIRECTIVES = [
   ClickOutsideDirective,
   InListValidator,
   AutoFocusDirective,
+  MetadataCSValuesComponent,
   RoleDirective,
   MetadataRepresentationDirective,
   ListableObjectDirective,

@@ -1,0 +1,12 @@
+
+
+<div class="item-page-field" *ngFor="let collection of (this.collections$ | async)">
+  <div *ngIf="collection?.uuid==='b5b4c0fc-d955-42b7-909c-5e8f498d8a7a' || collection?.uuid==='b55afbbf-fc3f-4159-a38e-e8533c32685d' 
+    || collection?.uuid==='c277530b-5e3d-43fe-97f3-9a53ec1062ae' || collection?.uuid==='afa9de59-a6e3-4113-8052-4e767b6cd553'
+    || collection?.uuid==='46f1586e-1747-4d33-98b2-7d5c08a611f2' || collection?.uuid==='a9a069ea-a1b8-4717-80af-06e951f6cd3a'
+    || collection?.uuid==='281c1706-b007-47ba-9b4e-e0c7a1b60ca6'">
+    <ds-metadata-values [mdValues]="item?.allMetadata(fields)" [separator]="separator" [label]="label"
+      [enableMarkdown]="enableMarkdown" [urlRegex]="urlRegex"
+      [browseDefinition]="browseDefinition|async"></ds-metadata-values>
+  </div>
+</div>

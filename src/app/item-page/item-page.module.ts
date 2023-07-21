@@ -17,6 +17,10 @@ import {
 } from './simple/field-components/specific-field/abstract/item-page-abstract-field.component';
 import { ItemPageUriFieldComponent } from './simple/field-components/specific-field/uri/item-page-uri-field.component';
 import { ItemPageFieldComponent } from './simple/field-components/specific-field/item-page-field.component';
+import { ItemPageCSFieldComponent } from './simple/field-components/specific-field/item-page-csfield.component';
+import {
+  ItemPageSponsorshipFieldComponent
+} from './simple/field-components/specific-field/sponsorship/item-page-sponsorship-field.component';
 import { CollectionsComponent } from './field-components/collections/collections.component';
 import { FullItemPageComponent } from './full/full-item-page.component';
 import { FullFileSectionComponent } from './full/field-components/file-section/full-file-section.component';
@@ -80,6 +84,8 @@ const DECLARATIONS = [
   ItemPageAbstractFieldComponent,
   ItemPageUriFieldComponent,
   ItemPageFieldComponent,
+  ItemPageCSFieldComponent,
+  ItemPageSponsorshipFieldComponent,
   CollectionsComponent,
   FullFileSectionComponent,
   ThemedFullFileSectionComponent,

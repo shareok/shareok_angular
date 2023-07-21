@@ -1,0 +1,11 @@
+<div *ngIf="hasCCLicenses" class="item-page-field">
+  <div class="simple-view-element">
+    <h5 class="simple-view-element-header">{{"item.rights.cclicense" | translate}}</h5>
+    <div class="simple-view-element-body">
+      <a href="{{cclUri}}"><img src="{{ iconSrc }}"></a>
+      <div>
+        {{"item.cclicense.message" | translate}} {{ cclicense }}
+      </div>
+    </div>
+  </div>
+</div>

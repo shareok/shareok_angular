@@ -1,122 +1,168 @@
-<div class="mb-4 ccLicense-select">
-  <ds-select
-    [disabled]="!submissionCcLicenses">
+<p>If you wish, you may add a <a href='https://creativecommons.org/'>Creative Commons</a> License to your item. <strong>Creative Commons licenses govern what people who read your work may then do with it. You will still retain your copyright with most Creative Commons licenses.</strong></p>
 
-    <ng-container class="selection">
+<div class="mb-4 ccLicense-select">
+  <ng-container class="menu">
       <span *ngIf="!submissionCcLicenses">
         <ds-themed-loading></ds-themed-loading>
       </span>
-      <span *ngIf="getSelectedCcLicense()">
-        {{ getSelectedCcLicense().name }}
-      </span>
-      <span *ngIf="submissionCcLicenses && !getSelectedCcLicense()">
-        <ng-container *ngIf="storedCcLicenseLink">
-          {{ 'submission.sections.ccLicense.change' | translate }}
-        </ng-container>
-        <ng-container *ngIf="!storedCcLicenseLink">
-          {{ 'submission.sections.ccLicense.select' | translate }}
-        </ng-container>
-      </span>
-    </ng-container>
-
-    <ng-container class="menu">
-      <button *ngIf="submissionCcLicenses?.length == 0"
-              class="dropdown-item disabled">
-        {{ 'submission.sections.ccLicense.none' | translate }}
-      </button>
-      <button *ngFor="let license of submissionCcLicenses"
-              class="dropdown-item"
-              (click)="selectCcLicense(license)">
-        {{ license.name }}
-      </button>
-    </ng-container>
-
-  </ds-select>
+      <div *ngFor="let license of submissionCcLicenses; let i = index">
+      <input type="radio"
+              class="mr-1"
+              name="license.name"
+              (change)="onSelectChoice(CC_CHOOSERS[i].id)">
+      <span>{{ CC_CHOOSERS[i].choice }}</span>
+    </div>
+    <input type="radio"
+            class="mr-1"
+            name="license.name"
+            (change)="onSelectChoice(CC_CHOOSERS[2].id)">
+    <span>{{ CC_CHOOSERS[2].choice }}</span>
+  </ng-container>
 </div>
 
-<ng-container *ngIf="getSelectedCcLicense()">
 
-  <div *ngFor="let field of getSelectedCcLicense().fields"
-       class="mb-4">
-
-    <div class="d-flex flex-row">
-      <div class="font-weight-bold {{ field.id }}">
-        {{ field.label }}
-      </div>
-      <button
-        class="btn btn-outline-info btn-sm ml-2"
-        (click)="openInfoModal(infoModal)">
-        <i class="fas fa-question"></i>
-      </button>
-    </div>
-
-    <ng-template #infoModal>
-
+<ng-container *ngIf="selectChoice=='c0'; else licensetypes">
+  <span *ngIf="!submissionCcLicenses">
+    <ds-themed-loading></ds-themed-loading>
+  </span>
+  <p>License Type:</p>
+  <div class="col">
+    <p></p>
+    <div class="col-sm-12">
       <div>
-
-        <div class="modal-header mb-4 ">
-          <div>
-            <h4>
-              {{ field.label }}
-            </h4>
-            <div [innerHTML]="field.description"></div>
-          </div>
-          <button type="button" class="close"
-                  (click)="closeInfoModal()" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-
-        <div class="modal-body">
-          <div *ngFor="let value of field.enums"
-               class="mb-4">
-            <h5>
-              {{ value.label }}
-            </h5>
-            <div [innerHTML]="value.description" class="font-weight-light"></div>
-          </div>
-        </div>
-
+        <input name="licensetype_chooser" type="radio" class="mr-1" value="cc0"
+          (change)="selectCcLicense(submissionCcLicenses[0])"
+          [checked]="existinglinkType==='cc0'">
+          <span>CC0</span>
       </div>
+      <div>
+        <input name="licensetype_chooser" type="radio" class="mr-1" value="cc1"
+        (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"
+        (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"
+        [checked]="existinglinkType==='cc1'">
+        <span>CC BY</span>
+      </div>
+      <div>
+        <input name="licensetype_chooser" type="radio" class="mr-1" value="cc2"
+          (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[1])"
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"
+          [checked]="existinglinkType==='cc2'">
+          <span>CC BY-SA</span>
+      </div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc3"
+          (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[0])"
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"
+          [checked]="existinglinkType==='cc3'">
+          <span>CC BY-NC</span>
+      </div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc4"
+          (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[2])"
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[0])"
+          [checked]="existinglinkType==='cc4'">
+          <span>CC BY-ND</span>
+      </div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc5"
+          (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[1])"
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"
+          [checked]="existinglinkType==='cc5'">
+          <span>CC BY-NC-SA</span>
+      </div>
+      <div><input name="licensetype_chooser" type="radio" class="mr-1" value="cc6"
+          (change)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[1], submissionCcLicenses[1].fields[1].enums[2])"
+          (click)="selectChooser(submissionCcLicenses[1], submissionCcLicenses[1].fields[0], submissionCcLicenses[1].fields[0].enums[1])"
+          [checked]="existinglinkType==='cc6'">
+          <span>CC BY-NC-ND</span>
+      </div>
+    </div>
+  </div>
+</ng-container>
 
-    </ng-template>
-
-    <ds-select *ngIf="field.enums?.length > 5" [disabled]="field.id === 'jurisdiction' && defaultJurisdiction !== undefined && defaultJurisdiction !== 'none'">
-      <ng-container class="selection" *ngVar="getSelectedOption(getSelectedCcLicense(), field) as option">
-        <span *ngIf="option">
-          {{ option.label }}
-        </span>
-        <span *ngIf="!option">
-          {{ 'submission.sections.ccLicense.option.select' | translate }}
-        </span>
-      </ng-container>
-      <ng-container class="menu">
-        <div class="options-select-menu overflow-auto">
-          <button *ngFor="let option of field.enums"
-                  class="dropdown-item"
-                  (click)="selectOption(getSelectedCcLicense(), field, option)">
-            {{ option.label }}
+<ng-template #licensetypes>
+    <ng-container *ngIf="selectChoice=='c1'; else nolicense">
+      {{ selectCcLicense(submissionCcLicenses[1]) }}
+      <div *ngFor="let field of getSelectedCcLicense().fields"
+           class="mb-4">
+           {{ field.id }}
+        <div class="d-flex flex-row">
+          <div class="font-weight-bold {{ field.id }}">
+            {{ field.label }}
+          </div>
+          <button
+            class="btn btn-outline-info btn-sm ml-2"
+            (click)="openInfoModal(infoModal)">
+            <i class="fas fa-question"></i>
           </button>
         </div>
-      </ng-container>
-    </ds-select>
 
-    <ng-container *ngIf="field.enums?.length <= 5">
-      <div *ngFor="let option of field.enums"
-           class="d-flex flex-row m-1">
-        <div (click)="selectOption(getSelectedCcLicense(), field, option)">
-          <input type="radio"
-                 title="{{ option.label }}"
-                 class="mr-1"
-                 [checked]="isSelectedOption(getSelectedCcLicense(), field, option)">
-          <span>{{ option.label }}</span>
-        </div>
+        <ng-template #infoModal>
+
+          <div>
+
+            <div class="modal-header mb-4 ">
+              <div>
+                <h4>
+                  {{ field.label }}
+                </h4>
+                <div [innerHTML]="field.description"></div>
+              </div>
+              <button type="button" class="close"
+                      (click)="closeInfoModal()" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div *ngFor="let value of field.enums"
+                   class="mb-4">
+                <h5>
+                  {{ value.label }}
+                </h5>
+                <div [innerHTML]="value.description" class="font-weight-light"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </ng-template>
+
+
+        <ds-select *ngIf="field.enums?.length > 5" [disabled]="field.id === 'jurisdiction' && defaultJurisdiction !== undefined && defaultJurisdiction !== 'none'">
+          <ng-container class="selection" *ngVar="getSelectedOption(getSelectedCcLicense(), field) as option">
+            <span *ngIf="option">
+              {{ option.label }}
+            </span>
+            <span *ngIf="!option">
+              {{ 'submission.sections.ccLicense.option.select' | translate }}
+            </span>
+          </ng-container>
+          <ng-container class="menu">
+            <div class="options-select-menu overflow-auto">
+              <button *ngFor="let option of field.enums"
+                      class="dropdown-item"
+                      (click)="selectOption(getSelectedCcLicense(), field, option)">
+                {{ option.label }}
+              </button>
+            </div>
+          </ng-container>
+        </ds-select>
+
+        <ng-container *ngIf="field.enums?.length <= 5">
+     <div *ngFor="let option of field.enums"
+               class="d-flex flex-row m-1">
+            <div (click)="selectOption(getSelectedCcLicense(), field, option)">
+              <input type="radio"
+                     title="{{ option.label }}"
+                     class="mr-1"
+                     [checked]="isSelectedOption(getSelectedCcLicense(), field, option)">
+              <span>{{ option.label }}</span>
+            </div>
+          </div>
+        </ng-container>
       </div>
     </ng-container>
+</ng-template>
 
-  </div>
-
-</ng-container>
+<ng-template #nolicense></ng-template>
 
 <ng-container *ngIf="getCcLicenseLink$()">
   <ng-container *ngVar="getCcLicenseLink$() | async as licenseLink">
@@ -135,7 +181,8 @@
         <div (click)="setAccepted(!accepted)">
           <input type="checkbox"
                  title="accepted"
-                 [checked]="accepted">
+                 [checked]="accepted"
+                 [disabled]="selectChoice==='c2'">
           <span> {{ 'submission.sections.ccLicense.confirmation' | translate }}</span>
         </div>
       </div>

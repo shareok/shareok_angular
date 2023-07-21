@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DsoEditMenuComponent } from '../dso-page/dso-edit-menu/dso-edit-menu.component';
+import { DsoEditMenuComponent } from './dso-edit-menu/dso-edit-menu.component';
 import {
   DsoEditMenuSectionComponent
-} from '../dso-page/dso-edit-menu/dso-edit-menu-section/dso-edit-menu-section.component';
+} from './dso-edit-menu/dso-edit-menu-section/dso-edit-menu-section.component';
 import {
   DsoEditMenuExpandableSectionComponent
-} from '../dso-page/dso-edit-menu/dso-edit-expandable-menu-section/dso-edit-menu-expandable-section.component';
+} from './dso-edit-menu/dso-edit-expandable-menu-section/dso-edit-menu-expandable-section.component';
 import { NgbDropdownModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 const COMPONENTS = [

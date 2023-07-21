@@ -1,13 +1,19 @@
 <h2 class="comcol-browse-label h5">{{'browse.comcol.head' | translate}}</h2>
 <nav class="comcol-browse mb-4" aria-label="Browse Community or Collection">
   <div class="d-none d-sm-block">
-
     <div class="list-group list-group-horizontal">
-      <a *ngFor="let option of allOptions"
-         class="list-group-item"
-         [routerLink]="option.routerLink"
-         [queryParams]="option.params"
-         routerLinkActive="active">{{ option.label | translate }}</a>
+      <ng-container *ngIf="normalHandle!=='11244/28096'; else csTemp">
+        <ng-container *ngFor="let option of allOptions">
+          <ng-container *ngIf="!((option.label | translate)==='By SampleID'||(option.label | translate)==='By City'
+          ||(option.label | translate)==='By State'||(option.label | translate)==='By ZipCode'||(option.label | translate)==='By Subject Category'
+          ||(option.label | translate)==='By Vocabulary Subjects')">
+            <a class="list-group-item"
+            [routerLink]="option.routerLink"
+            [queryParams]="option.params"
+            routerLinkActive="active">{{ option.label | translate }}</a>
+          </ng-container>
+        </ng-container>
+      </ng-container>
     </div>
   </div>
 
@@ -16,9 +22,41 @@
             class="form-control"
             aria-label="Browse Community or Collection"
             (ngModelChange)="onSelectChange($event)" [ngModel]="currentOptionId$ | async">
-      <option *ngFor="let option of allOptions"
-              [ngValue]="option.id"
-              [attr.selected]="(currentOptionId$ | async) === option.id ? 'selected' : null">{{ option.label | translate }}</option>
+            <ng-container *ngIf="normalHandle!=='11244/28096'; else csOptTemp">
+              <ng-container *ngFor="let option of allOptions">
+                <ng-container *ngIf="!((option.label | translate)==='By SampleID'||(option.label | translate)==='By City'
+                          ||(option.label | translate)==='By State'||(option.label | translate)==='By ZipCode')">
+                          <option [ngValue]="option.id"
+                          [attr.selected]="(currentOptionId$ | async) === option.id ? 'selected' : null">{{ option.label | translate }}</option>
+                </ng-container>
+              </ng-container>
+            </ng-container>
     </select>
   </div>
 </nav>
+
+<ng-template #csTemp>
+  <ng-container *ngFor="let option of allOptions">
+    <ng-container *ngIf="!((option.label | translate)==='By Issue Date'||(option.label | translate)==='By Author'
+    ||(option.label | translate)==='By Title'||(option.label | translate)==='By Subject'||(option.label | translate)==='By Series'
+    ||(option.label | translate)==='Recent Submissions'||(option.label | translate)==='By Degree'
+    ||(option.label | translate)==='By Vocabulary Subjects')">
+      <a class="list-group-item"
+      [routerLink]="option.routerLink"
+      [queryParams]="option.params"
+      routerLinkActive="active">{{ option.label | translate }}</a>
+    </ng-container>
+  </ng-container>
+</ng-template>
+
+<ng-template #csOptTemp>
+  <ng-container *ngFor="let option of allOptions">
+    <ng-container *ngIf="!((option.label | translate)==='By Issue Date'||(option.label | translate)==='By Author'
+              ||(option.label | translate)==='By Title'||(option.label | translate)==='By Subject'||(option.label | translate)==='By Series'
+              ||(option.label | translate)==='By Degree'
+              ||(option.label | translate)==='By Vocabulary Subjects')">
+              <option [ngValue]="option.id"
+              [attr.selected]="(currentOptionId$ | async) === option.id ? 'selected' : null">{{ option.label | translate }}</option>
+    </ng-container>
+  </ng-container>
+</ng-template>

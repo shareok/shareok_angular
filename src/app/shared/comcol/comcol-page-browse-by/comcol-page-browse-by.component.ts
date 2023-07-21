@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { getCommunityPageRoute } from '../../../community-page/community-page-routing-paths';
 import { getCollectionPageRoute } from '../../../collection-page/collection-page-routing-paths';
 import { getFirstCompletedRemoteData } from '../../../core/shared/operators';
@@ -9,6 +10,7 @@ import { PaginatedList } from '../../../core/data/paginated-list.model';
 import { BrowseDefinition } from '../../../core/shared/browse-definition.model';
 import { RemoteData } from '../../../core/data/remote-data';
 import { BrowseService } from '../../../core/browse/browse.service';
+import { HandleService } from '../../handle.service';
 
 export interface ComColPageNavOption {
   id: string;
@@ -32,15 +34,20 @@ export class ComcolPageBrowseByComponent implements OnInit {
    */
   @Input() id: string;
   @Input() contentType: string;
+  // The handle of the Community or Collection
+  @Input() content: string;
 
   allOptions: ComColPageNavOption[];
 
   currentOptionId$: Observable<string>;
 
+  normalHandle: string;
+
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private browseService: BrowseService
+    protected route: ActivatedRoute,
+    protected router: Router,
+    protected browseService: BrowseService,
+    protected translate: TranslateService
   ) {
   }
 
@@ -76,6 +83,8 @@ export class ComcolPageBrowseByComponent implements OnInit {
     this.currentOptionId$ = this.route.params.pipe(
       map((params: Params) => params.id)
     );
+
+    this.normalHandle = this.getNormalHandle();
   }
 
   onSelectChange(newId: string) {
@@ -83,5 +92,11 @@ export class ComcolPageBrowseByComponent implements OnInit {
       .find((option: ComColPageNavOption) => option.id === newId);
 
     this.router.navigate([selectedOption.routerLink], { queryParams: selectedOption.params });
+  }
+
+  public getNormalHandle() {
+    let service: HandleService;
+    service = new HandleService();
+    return service.normalizeHandle(this.content);
   }
 }

@@ -1,5 +1,5 @@
-import { SubmissionFieldScopeType } from './../../../../core/submission/submission-field-scope-type';
-import { SectionVisibility } from './../../../../submission/objects/section-visibility.model';
+import { SubmissionFieldScopeType } from '../../../../core/submission/submission-field-scope-type';
+import { SectionVisibility } from '../../../../submission/objects/section-visibility.model';
 import { Injectable, Injector } from '@angular/core';
 
 import { DYNAMIC_FORM_CONTROL_TYPE_ARRAY, DynamicFormGroupModelConfig } from '@ng-dynamic-forms/core';

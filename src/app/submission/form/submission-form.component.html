@@ -18,6 +18,7 @@
             </ds-submission-form-collection>
           </ng-container>
         </div>
+        <div class="submission-form-help-message small">{{ displayUploadInstruction() | translate }} </div>
         <div class="submission-form-header-item text-right">
             <ds-submission-form-section-add [collectionId]="collectionId"
                                             [submissionId]="submissionId">

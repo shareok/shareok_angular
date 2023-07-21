@@ -10,7 +10,7 @@ import { GroupDataService } from '../../core/eperson/group-data.service';
 import { LinkHeadService } from '../../core/services/link-head.service';
 import { ConfigurationDataService } from '../../core/data/configuration-data.service';
 import { getFirstCompletedRemoteData } from '../../core/shared/operators';
-import { environment } from '../../../../src/environments/environment';
+import { environment } from '../../../environments/environment';
 import { SearchConfigurationService } from '../../core/shared/search/search-configuration.service';
 import { PaginationService } from '../../core/pagination/pagination.service';
 import { Router } from '@angular/router';
