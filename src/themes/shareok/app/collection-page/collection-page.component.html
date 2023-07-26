@@ -8,7 +8,7 @@
           <header class="comcol-header mr-auto">
             <!-- Collection Name -->
             <ds-comcol-page-header
-              [name]="collection.name">
+              [name]="dsoNameService.getName(collection)">
             </ds-comcol-page-header>
             <!-- Collection logo -->
             <ds-comcol-page-logo *ngIf="logoRD$"
@@ -33,7 +33,7 @@
               [title]="'collection.page.news'">
             </ds-comcol-page-content>
           </header>
-<!--          <ds-dso-edit-menu></ds-dso-edit-menu>-->
+          <ds-dso-edit-menu></ds-dso-edit-menu>
           <div class="pl-2 space-children-mr">
             <ds-dso-page-subscription-button [dso]="collection"></ds-dso-page-subscription-button>
           </div>
@@ -46,22 +46,9 @@
             [contentType]="collection.type">
           </ds-themed-comcol-page-browse-by>
 
-          <ng-container *ngVar="(itemRD$ | async) as itemRD">
-            <div class="mt-4" *ngIf="itemRD?.hasSucceeded" @fadeIn>
-              <h3 class="sr-only">{{'collection.page.browse.recent.head' | translate}}</h3>
-              <ds-viewable-collection
-                [config]="paginationConfig"
-                [sortConfig]="sortConfig"
-                [objects]="itemRD"
-                [hideGear]="true">
-              </ds-viewable-collection>
-            </div>
-            <ds-error *ngIf="itemRD?.hasFailed"
-                      message="{{'error.recent-submissions' | translate}}"></ds-error>
-            <ds-themed-loading *ngIf="!itemRD || itemRD.isLoading"
-                               message="{{'loading.recent-submissions' | translate}}"></ds-themed-loading>
-            <div *ngIf="!itemRD?.isLoading && itemRD?.payload?.page.length === 0" class="alert alert-info w-100" role="alert">
-              {{'collection.page.browse.recent.empty' | translate}}
+          <ng-container>
+            <div class="content" role="main">
+              <ds-leaflet-map></ds-leaflet-map>
             </div>
           </ng-container>
         </section>

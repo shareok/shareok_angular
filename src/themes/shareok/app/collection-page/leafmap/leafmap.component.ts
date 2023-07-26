@@ -5,7 +5,7 @@ import 'leaflet.markercluster';
 import * as jsonData from '../../../assets/points.json';
 
 @Component({
-  selector: 'app-leafmap',
+  selector: 'ds-leaflet-map',
   templateUrl: './leafmap.component.html',
   styleUrls: ['./leafmap.component.scss']
 })

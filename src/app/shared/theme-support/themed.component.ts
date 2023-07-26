@@ -91,13 +91,12 @@ export abstract class ThemedComponent<T> implements OnInit, OnDestroy, OnChanges
   }
 
   protected renderComponentInstance(changes?: SimpleChanges): void {
+    this.destroyComponentInstance();
     if (hasValue(this.lazyLoadSub)) {
       this.lazyLoadSub.unsubscribe();
     }
 
     if (hasNoValue(this.lazyLoadObs)) {
-      this.destroyComponentInstance();
-
       this.lazyLoadObs = combineLatest([
         observableOf(changes),
         this.resolveThemedComponent(this.themeService.getThemeName()).pipe(
