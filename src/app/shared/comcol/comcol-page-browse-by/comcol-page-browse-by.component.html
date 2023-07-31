@@ -40,7 +40,8 @@
     <ng-container *ngIf="!((option.label | translate)==='By Issue Date'||(option.label | translate)==='By Author'
     ||(option.label | translate)==='By Title'||(option.label | translate)==='By Subject'||(option.label | translate)==='By Series'
     ||(option.label | translate)==='Recent Submissions'||(option.label | translate)==='By Degree'
-    ||(option.label | translate)==='By Vocabulary Subjects')">
+    ||(option.label | translate)==='By Vocabulary Subjects'
+    ||(option.label | translate)==='By Subject Category')">
       <a class="list-group-item"
       [routerLink]="option.routerLink"
       [queryParams]="option.params"
@@ -54,7 +55,8 @@
     <ng-container *ngIf="!((option.label | translate)==='By Issue Date'||(option.label | translate)==='By Author'
               ||(option.label | translate)==='By Title'||(option.label | translate)==='By Subject'||(option.label | translate)==='By Series'
               ||(option.label | translate)==='By Degree'
-              ||(option.label | translate)==='By Vocabulary Subjects')">
+              ||(option.label | translate)==='By Vocabulary Subjects'
+              ||(option.label | translate)==='By Subject Category')">
               <option [ngValue]="option.id"
               [attr.selected]="(currentOptionId$ | async) === option.id ? 'selected' : null">{{ option.label | translate }}</option>
     </ng-container>
