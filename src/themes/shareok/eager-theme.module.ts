@@ -17,6 +17,7 @@ import {DsoPageModule} from "../../app/shared/dso-page/dso-page.module";
 import {
   ItemSearchResultListElementComponent
 } from './app/shared/object-list/search-result-list-element/item-search-result/item-types/item/item-search-result-list-element.component';
+import { CsItemSimpleInfoNoteComponent } from './app/item-page/simple/item-types/untyped-item/csitem-simple-info/csitem-simple-info.component';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -26,6 +27,7 @@ const ENTRY_COMPONENTS = [
   UntypedItemComponent,
   LegendNoteComponent,
   ItemSearchResultListElementComponent,
+  CsItemSimpleInfoNoteComponent,
 ];
 
 const DECLARATIONS = [

@@ -24,19 +24,10 @@ export class ThemedItemSearchResultListElementComponent extends ThemedComponent<
       }
     
       protected importThemedComponent(themeName: string): Promise<any> {
-        console.log("Themed item search:");
-        console.log(this.showLabel);
-        console.log(themeName);
-        console.log('importThemedComponent');
-  
         return import(`../../../../../../../themes/${themeName}/app/shared/object-list/search-result-list-element/item-search-result/item-types/item/item-search-result-list-element.component`);
       }
     
       protected importUnthemedComponent(): Promise<any> {
-        console.log("Item search:");
-        console.log(this.showLabel);
-        console.log('importUnthemedComponent');
-  
         return import(`./item-search-result-list-element.component`);
       }
 

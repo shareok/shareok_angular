@@ -1,0 +1,59 @@
+<h3>Sample Information</h3>
+<div class="ds-table-responsive">
+    <table class="table table-striped table-hover">
+        <tbody>
+            <tr *ngIf="detail" class="ds-table-row ">
+                <td class="label-cell">Collection Detail</td>
+                <td></td>
+                <td>{{ detail }}</td>
+            </tr>
+            <tr *ngIf="city" class="ds-table-row ">
+                <td class="label-cell">City</td>
+                <td></td>
+                <td>{{ city }}</td>
+            </tr>
+            <tr *ngIf="state" class="ds-table-row ">
+                <td class="label-cell">State</td>
+                <td></td>
+                <td>{{ state }}</td>
+            </tr>
+            <tr *ngIf="zip" class="ds-table-row ">
+                <td class="label-cell">Zip</td>
+                <td></td>
+                <td>{{ zip }}</td>
+            </tr>
+            <tr *ngIf="internalcode" class="ds-table-row ">
+                <td class="label-cell">Internal Code</td>
+                <td></td>
+                <td>{{ internalcode }}</td>
+            </tr>
+            <tr *ngIf="isolatesfromrbm" class="ds-table-row ">
+                <td class="label-cell"># of Isolates from RBM</td>
+                <td></td>
+                <td>{{ isolatesfromrbm }}</td>
+            </tr>
+            <tr *ngIf="isolatesfromtv8" class="ds-table-row ">
+                <td class="label-cell"># of Isolates from TV8</td>
+                <td></td>
+                <td>{{ isolatesfromtv8 }}</td>
+            </tr>
+            <tr *ngIf="sampleid" class="ds-table-row ">
+                <td class="label-cell">Sample ID</td>
+                <td></td>
+                <td>{{ sampleid }}</td>
+            </tr>
+            <tr *ngIf="imagestatus" class="ds-table-row ">
+                <td class="label-cell">Image Status</td>
+                <td></td>
+                <td>Available</td>
+            </tr>
+            <tr *ngIf="taxonomy.length > 0" class="ds-table-row ">
+                <td class="label-cell">Taxonomy</td>
+                <td></td>
+                <td>
+                    <div *ngFor="let tax of taxonomy">{{ tax }}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
