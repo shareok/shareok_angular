@@ -13,6 +13,10 @@ import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { ItemSharedModule } from '../../app/item-page/item-shared.module';
 import { LegendNoteComponent } from './app/item-page/simple/item-types/untyped-item/legend-note/legend-note.component';
+import {DsoPageModule} from "../../app/shared/dso-page/dso-page.module";
+import {
+  ItemSearchResultListElementComponent
+} from './app/shared/object-list/search-result-list-element/item-search-result/item-types/item/item-search-result-list-element.component';
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
@@ -21,6 +25,7 @@ import { LegendNoteComponent } from './app/item-page/simple/item-types/untyped-i
 const ENTRY_COMPONENTS = [
   UntypedItemComponent,
   LegendNoteComponent,
+  ItemSearchResultListElementComponent,
 ];
 
 const DECLARATIONS = [
@@ -41,6 +46,7 @@ const DECLARATIONS = [
     NavbarModule,
     ItemPageModule,
     ItemSharedModule,
+    DsoPageModule,
   ],
   declarations: DECLARATIONS,
   providers: [

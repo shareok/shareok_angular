@@ -108,7 +108,7 @@ export class DSONameService {
     } else if (entityType === 'OrgUnit') {
       return this.firstMetadataValue(object, dso, 'organization.legalName');
     }
-    return this.firstMetadataValue(object, dso, 'dc.title') || dso.name || this.translateService.instant('dso.name.untitled');
+    return this.firstMetadataValue(object, dso, 'dc.title') || dso.name || this.firstMetadataValue(object, dso, 'dwc.npdg.sampleid') || this.translateService.instant('dso.name.untitled');
   }
 
   /**
