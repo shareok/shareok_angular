@@ -84,44 +84,8 @@ export class CsItemSimpleInfoNoteComponent implements OnInit {
     return this.item.firstMetadataValue('dwc.npdg.imagestatus');
   }
   getTaxonomy() {
-    // const wiki = this.item.firstMetadataValue('dc.relation.wiki');
     const wikis = this.item.allMetadataValues('dc.relation.wiki')
-    console.log(JSON.stringify(wikis));
     return wikis;
   }
 
 }
-    // <table class="table table-striped table-hover">
-    //     <tbody>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.detail']"
-    //             [label]="'item.page.Legend.collectiondetail'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.homecity']"
-    //             [label]="'item.page.Legend.city'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.homestate']"
-    //             [label]="'item.page.Legend.state'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.homezip']"
-    //             [label]="'item.page.Legend.zip'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.internalcode']"
-    //             [label]="'item.page.Legend.internalcode'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.isolatesRBM']"
-    //             [label]="'item.page.Legend.isolatesfromrbm'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.isolatesTV8']"
-    //             [label]="'item.page.Legend.isolatesfromtv8'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.sampleid']"
-    //             [label]="'item.page.Legend.sampleid'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dwc.npdg.imagestatus']"
-    //             [label]="'item.page.Legend.imagestatus'">
-    //         </ds-csgeneric-item-page-field>
-    //         <ds-csgeneric-item-page-field [item]="item" [fields]="['dc.relation.wiki']"
-    //             [label]="'item.page.Legend.taxonomy'">
-    //         </ds-csgeneric-item-page-field>
-    //     </tbody>
-    // </table>
