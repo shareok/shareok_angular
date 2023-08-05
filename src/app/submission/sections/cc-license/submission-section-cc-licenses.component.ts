@@ -80,6 +80,8 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
     {id: 2, choice: 'I do not wish to apply a Creative Commons license at this time'}
   ];
 
+  hidelink: boolean;
+
   /**
    * The Creative Commons link saved in the workspace item.
    */
@@ -144,13 +146,16 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
     if(id === 0){
       this.selectChoice = 'c0';
       this.getExitingChooser();
+      this.hidelink = false;
     }
     if(id === 1){
       this.selectChoice = 'c1';
+      this.hidelink = false;
     }
     if(id === 2){
       this.selectChoice = 'c2';
       this.setAccepted(false);
+      this.hidelink = true;
     }
   }
 

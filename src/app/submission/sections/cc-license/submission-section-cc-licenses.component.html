@@ -169,7 +169,7 @@
     <div *ngIf="!licenseLink">
       <ds-themed-loading></ds-themed-loading>
     </div>
-    <div *ngIf="licenseLink"
+    <div *ngIf="licenseLink" [hidden]="hidelink"
          class="mt-2 p-4 bg-light text-dark">
       <div>
         {{ 'submission.sections.ccLicense.link' | translate }}
