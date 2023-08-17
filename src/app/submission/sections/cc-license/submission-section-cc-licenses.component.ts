@@ -257,7 +257,12 @@ export class SubmissionSectionCcLicensesComponent extends SectionModelComponent 
   }
 
   getExitingChooser() {
-    this.getCcLicenseLink$().subscribe(link => this.getExistingLicenseType(link));
+    // this.getCcLicenseLink$().subscribe(link => this.getExistingLicenseType(link));
+    this.getCcLicenseLink$().pipe(
+      take(1),
+    ).subscribe(() => {
+      link => this.getExistingLicenseType(link);
+    });
   }
 
   getExistingLicenseType(link: string) {
