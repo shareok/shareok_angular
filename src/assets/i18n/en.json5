@@ -5317,4 +5317,12 @@
   "browse.comcol.by.subjects": "By Vocabulary Subjects",
 
   "menu.section.browse_global_by_subjects": "By Vocabulary Subjects",
+
+  "browse.comcol.by.department": "College/Department",
+
+  "browse.comcol.by.undergraduate": "Undergraduate Content",
+
+  "menu.section.browse_global_by_department": "College/Department",
+
+  "menu.section.browse_global_by_undergraduate": "Undergraduate Content",
 }

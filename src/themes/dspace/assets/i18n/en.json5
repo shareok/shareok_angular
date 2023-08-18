@@ -60,4 +60,9 @@
   "item.rights.cclicense": "Creative Commons",
   "item.cclicense.message": "Except where otherwise noted, this item's license is described as ",
 
+  "browse.comcol.by.department": "College/Department",
+  "browse.comcol.by.undergraduate": "Undergraduate Content",
+  "menu.section.browse_global_by_department": "College/Department",
+  "menu.section.browse_global_by_undergraduate": "Undergraduate Content",
+
 }
