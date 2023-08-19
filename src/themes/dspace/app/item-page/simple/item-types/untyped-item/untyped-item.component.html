@@ -75,6 +75,7 @@
       [fields]="['dc.identifier.uri']"
       [label]="'item.page.uri'">
     </ds-item-page-uri-field>
+    <ds-item-page-uri-doi-field [item]="object"></ds-item-page-uri-doi-field>
     <ds-generic-item-page-field [item]="object"
       [fields]="['dc.relation.uri']"
       [label]="'item.relation-ou.uri'">
@@ -83,6 +84,7 @@
       [fields]="['dc.description.notes']"
       [label]="'item.description.notes'">
     </ds-generic-item-page-field>
+
     <ds-item-page-sponsorship-field [item]="object"></ds-item-page-sponsorship-field>
     <ds-item-page-collections [item]="object"></ds-item-page-collections>
     <div>

@@ -5325,4 +5325,6 @@
   "menu.section.browse_global_by_department": "College/Department",
 
   "menu.section.browse_global_by_undergraduate": "Undergraduate Content",
+
+  "item.page.identifier.doi": "DOI",
 }

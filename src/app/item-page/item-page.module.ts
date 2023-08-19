@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ItemPageComponent } from './simple/item-page.component';
 import { ItemPageRoutingModule } from './item-page-routing.module';
 import { MetadataUriValuesComponent } from './field-components/metadata-uri-values/metadata-uri-values.component';
+import { MetadataUriDoiValuesComponent } from './field-components/metadata-uri-doi-values/metadata-uri-doi-values.component';
 import {
   ItemPageAuthorFieldComponent
 } from './simple/field-components/specific-field/author/item-page-author-field.component';
@@ -16,6 +17,7 @@ import {
   ItemPageAbstractFieldComponent
 } from './simple/field-components/specific-field/abstract/item-page-abstract-field.component';
 import { ItemPageUriFieldComponent } from './simple/field-components/specific-field/uri/item-page-uri-field.component';
+import { ItemPageUriDoiFieldComponent } from './simple/field-components/specific-field/uri-doi/item-page-uri-doi-field.component';
 import { ItemPageFieldComponent } from './simple/field-components/specific-field/item-page-field.component';
 import { ItemPageCSFieldComponent } from './simple/field-components/specific-field/item-page-csfield.component';
 import {
@@ -79,10 +81,12 @@ const DECLARATIONS = [
   FullItemPageComponent,
   ThemedFullItemPageComponent,
   MetadataUriValuesComponent,
+  MetadataUriDoiValuesComponent,
   ItemPageAuthorFieldComponent,
   ItemPageDateFieldComponent,
   ItemPageAbstractFieldComponent,
   ItemPageUriFieldComponent,
+  ItemPageUriDoiFieldComponent,
   ItemPageFieldComponent,
   ItemPageCSFieldComponent,
   ItemPageSponsorshipFieldComponent,
