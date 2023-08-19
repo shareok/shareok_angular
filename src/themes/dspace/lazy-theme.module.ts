@@ -64,12 +64,13 @@ import { SharedBrowseByModule } from '../../app/shared/browse-by/shared-browse-b
 import { ItemVersionsModule } from '../../app/item-page/versions/item-versions.module';
 import { ItemSharedModule } from 'src/app/item-page/item-shared.module';
 import { DsoPageModule } from 'src/app/shared/dso-page/dso-page.module';
-
+import { ItemPageTitleFieldComponent } from './app/item-page/simple/field-components/specific-field/title/item-page-title-field.component';
 
 const DECLARATIONS = [
   FeedbackFormComponent,
   FeedbackComponent,
   FileSectionComponent,
+  ItemPageTitleFieldComponent,
 ];
 
 @NgModule({
