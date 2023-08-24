@@ -66,4 +66,9 @@
   "menu.section.browse_global_by_undergraduate": "Undergraduate Content",
 
 	"item.page.identifier.doi": "DOI",
+
+  "browse.metadata.thesisdegrees": "Degree Discipline",
+  "browse.metadata.undergraduate": "Undergraduate Content",
+  "browse.metadata.department": "College/Department",
+  "browse.metadata.ispartofseries": "Series",
 }
