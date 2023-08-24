@@ -11,7 +11,7 @@
   "menu.section.browse_global_by_state": "By State",
   "menu.section.browse_global_by_zip": "By ZipCode",
   "menu.section.browse_global_by_ispartofseries": "By Series",
-  "menu.section.browse_global_by_thesisdegrees": "By Degree",
+  "menu.section.browse_global_by_thesisdegrees": "Degree Discipline",
   "menu.section.browse_global_by_subjects": "By Vocabulary Subjects",
 
   "browse.comcol.by.sampleid": "By SampleID",
@@ -19,7 +19,7 @@
   "browse.comcol.by.state": "By State",
   "browse.comcol.by.zip": "By ZipCode",
   "browse.comcol.by.ispartofseries":  "By Series",
-  "browse.comcol.by.thesisdegrees": "By Degree",
+  "browse.comcol.by.thesisdegrees": "Degree Discipline",
   "browse.comcol.by.subjects": "By Vocabulary Subjects",
 
   "submission.sections.submit.progressbar.describe.step1": "Describe",

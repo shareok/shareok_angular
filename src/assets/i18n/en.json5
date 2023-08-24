@@ -5262,7 +5262,7 @@
 
   "menu.section.browse_global_by_ispartofseries": "By Series",
 
-  "menu.section.browse_global_by_thesisdegrees": "By Degree",
+  "menu.section.browse_global_by_thesisdegrees": "Degree Discipline",
 
   "browse.comcol.by.sampleid": "By SampleID",
 
@@ -5274,7 +5274,7 @@
 
   "browse.comcol.by.ispartofseries": "By Series",
 
-  "browse.comcol.by.thesisdegrees": "By Degree",
+  "browse.comcol.by.thesisdegrees": "Degree Discipline",
 
   "submission.sections.submit.progressbar.describe.step1": "Describe",
 
