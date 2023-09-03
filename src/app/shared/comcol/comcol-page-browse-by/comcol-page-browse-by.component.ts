@@ -63,7 +63,6 @@ export class ComcolPageBrowseByComponent implements OnInit {
               routerLink: `/browse/${config.id}`,
               params: { scope: this.id }
             }));
-
           if (this.contentType === 'collection') {
             this.allOptions = [{
               id: this.id,
@@ -77,14 +76,25 @@ export class ComcolPageBrowseByComponent implements OnInit {
               routerLink: getCommunityPageRoute(this.id)
             }, ...this.allOptions];
           }
+
+          this.allOptions = this.allOptions.filter(this.filterCommons);
+
+          // Not OU Community
+          if(this.id !== 'e781c503-6d9f-49b0-923b-2a96a35c90e2') {
+            this.allOptions = this.allOptions.filter(this.filterUndergarduateContent);
+          }
+          // Not CS Collection
+          if(this.id !== 'a7693079-f4e3-400b-8ed1-2ffb80b8e550') {
+            this.allOptions = this.allOptions.filter(this.filterCsBrowses);
+          } else {
+            this.allOptions = this.allOptions.filter(this.unfilterCsBrowses);
+          }
         }
       });
 
     this.currentOptionId$ = this.route.params.pipe(
       map((params: Params) => params.id)
     );
-
-    this.normalHandle = this.getNormalHandle();
   }
 
   onSelectChange(newId: string) {
@@ -94,9 +104,31 @@ export class ComcolPageBrowseByComponent implements OnInit {
     this.router.navigate([selectedOption.routerLink], { queryParams: selectedOption.params });
   }
 
-  public getNormalHandle() {
-    let service: HandleService;
-    service = new HandleService();
-    return service.normalizeHandle(this.content);
+  filterCsBrowses(option: ComColPageNavOption) {
+    if(option.id === 'sampleid' || option.id === 'city' || option.id === 'state' || option.id === 'zip') {
+      return false;
+    }
+    return true;
+  }
+
+  unfilterCsBrowses(option: ComColPageNavOption) {
+    if(option.id === 'sampleid' || option.id === 'city' || option.id === 'state' || option.id === 'zip') {
+      return true;
+    }
+    return false;
+  }
+
+  filterCommons(option: ComColPageNavOption) {
+    if(option.id === 'srsc' || option.id === 'subjects') {
+      return false;
+    }
+    return true;
+  }
+
+  filterUndergarduateContent(option: ComColPageNavOption) {
+    if(option.id === 'undergraduate') {
+      return false;
+    }
+    return true;
   }
 }
