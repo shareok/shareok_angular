@@ -13,7 +13,7 @@ import {
   take,
   tap
 } from 'rxjs/operators';
-import { Observable, of as observableOf, Subject, Subscription } from 'rxjs';
+import { combineLatest, Observable, of as observableOf, Subject, Subscription } from 'rxjs';
 import { NgbModal, NgbModalRef, NgbTypeahead, NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
 
 import { VocabularyService } from '../../../../../../core/submission/vocabularies/vocabulary.service';
@@ -32,6 +32,8 @@ import { DsDynamicVocabularyComponent } from '../dynamic-vocabulary.component';
 import { Vocabulary } from '../../../../../../core/submission/vocabularies/models/vocabulary.model';
 import { VocabularyEntryDetail } from '../../../../../../core/submission/vocabularies/models/vocabulary-entry-detail.model';
 import { VocabularyTreeviewModalComponent } from '../../../../vocabulary-treeview-modal/vocabulary-treeview-modal.component';
+import { FeatureID } from 'src/app/core/data/feature-authorization/feature-id';
+import { AuthorizationDataService } from 'src/app/core/data/feature-authorization/authorization-data.service';
 
 /**
  * Component representing a onebox input field.
@@ -66,11 +68,18 @@ export class DsDynamicOneboxComponent extends DsDynamicVocabularyComponent imple
   private isHierarchicalVocabulary$: Observable<boolean>;
   private subs: Subscription[] = [];
 
+  isCollectionAdmin$: Observable<boolean>;
+  isCommunityAdmin$: Observable<boolean>;
+  isSiteAdmin$: Observable<boolean>;
+
+  subjectHide = false;
+
   constructor(protected vocabularyService: VocabularyService,
               protected cdr: ChangeDetectorRef,
               protected layoutService: DynamicFormLayoutService,
               protected modalService: NgbModal,
-              protected validationService: DynamicFormValidationService
+              protected validationService: DynamicFormValidationService,
+              protected authorizationService: AuthorizationDataService,
   ) {
     super(vocabularyService, layoutService, validationService);
   }
@@ -140,6 +149,10 @@ export class DsDynamicOneboxComponent extends DsDynamicVocabularyComponent imple
       .subscribe((value) => {
         this.setCurrentValue(this.model.value);
       }));
+
+    if(this.model.id === 'dc_subject') {
+      this.subjectHide = true;
+    }
   }
 
   /**
@@ -279,6 +292,25 @@ export class DsDynamicOneboxComponent extends DsDynamicVocabularyComponent imple
     this.subs
       .filter((sub) => hasValue(sub))
       .forEach((sub) => sub.unsubscribe());
+  }
+
+  isAdmin(): Observable<boolean> {
+    const isAdmin$ = combineLatest([
+      this.authorizationService.isAuthorized(FeatureID.IsCollectionAdmin),
+      this.authorizationService.isAuthorized(FeatureID.IsCommunityAdmin),
+      this.authorizationService.isAuthorized(FeatureID.AdministratorOf),
+    ]).pipe(
+      map(([isCollectionAdmin, isCommunityAdmin, isSiteAdmin]) => {
+        return isCollectionAdmin || isCommunityAdmin || isSiteAdmin;
+      }),
+      take(1),
+    );
+
+    return combineLatest([isAdmin$]).pipe(
+      map(([isAdmin]) => {
+        return isAdmin;
+      })
+    );
   }
 
 }
