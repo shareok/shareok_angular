@@ -4432,11 +4432,11 @@
 
   "submission.sections.upload.drop-message": "Drag and drop files",
 
-  "submission.sections.upload.edit.title": "Edit bitstream",
+  "submission.sections.upload.edit.title": "Edit file",
 
-  "submission.sections.upload.form.access-condition-label": "Access condition type",
+  "submission.sections.upload.form.access-condition-label": "Embargo",
 
-  "submission.sections.upload.form.access-condition-hint": "Select an access condition to apply on the bitstream once the item is deposited",
+  "submission.sections.upload.form.access-condition-hint": "By default, your work will be open access. Use this dropdown menu to apply an embargo, if applicable",
 
   "submission.sections.upload.form.date-required": "Date is required.",
 
@@ -4444,9 +4444,9 @@
 
   "submission.sections.upload.form.date-required-until": "Grant access until date is required.",
 
-  "submission.sections.upload.form.from-label": "Grant access from",
+  "submission.sections.upload.form.from-label": "Embargo from",
 
-  "submission.sections.upload.form.from-hint": "Select the date from which the related access condition is applied",
+  "submission.sections.upload.form.from-hint": "Select the date from which access will be allowed",
 
   "submission.sections.upload.form.from-placeholder": "From",
 
@@ -5335,5 +5335,4 @@
   "browse.metadata.department": "College/Department",
 
   "browse.metadata.ispartofseries": "Series",
-
-  }
+}

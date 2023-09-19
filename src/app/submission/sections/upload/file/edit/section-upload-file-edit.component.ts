@@ -245,6 +245,7 @@ export class SubmissionSectionUploadFileEditComponent
     let accessCondition: AccessConditionOption = null;
     this.availableAccessConditionOptions.filter((element) => element.name === control.value)
       .forEach((element) => accessCondition = element );
+
     if (isNotEmpty(accessCondition)) {
       const startDateControl: UntypedFormControl = control.parent.get('startDate') as UntypedFormControl;
       const endDateControl: UntypedFormControl = control.parent.get('endDate') as UntypedFormControl;
@@ -306,12 +307,23 @@ export class SubmissionSectionUploadFileEditComponent
 
     if (this.collectionPolicyType === POLICY_DEFAULT_WITH_LIST) {
       for (const accessCondition of this.availableAccessConditionOptions) {
-        accessConditionTypeOptions.push(
-          {
-            label: accessCondition.name,
-            value: accessCondition.name
+        if(!(accessCondition.name === 'lease' || accessCondition.name === 'administrator')) {
+          if(accessCondition.name === 'openaccess') {
+            accessConditionTypeOptions.push(
+              {
+                label: 'None (Open Access)',
+                value: accessCondition.name,
+              }
+            );
+          } else {
+            accessConditionTypeOptions.push(
+              {
+                label: accessCondition.name,
+                value: accessCondition.name
+              }
+            );
           }
-        );
+        }
       }
       accessConditionTypeModelConfig.options = accessConditionTypeOptions;
 

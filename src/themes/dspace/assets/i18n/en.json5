@@ -71,4 +71,10 @@
   "browse.metadata.undergraduate": "Undergraduate Content",
   "browse.metadata.department": "College/Department",
   "browse.metadata.ispartofseries": "Series",
+
+  "submission.sections.upload.edit.title": "Edit file",
+  "submission.sections.upload.form.access-condition-label": "Embargo",
+  "submission.sections.upload.form.access-condition-hint": "By default, your work will be open access. Use this dropdown menu to apply an embargo, if applicable",
+  "submission.sections.upload.form.from-hint": "Select the date from which access will be allowed",
+  "submission.sections.upload.form.from-label": "Embargo from",
 }

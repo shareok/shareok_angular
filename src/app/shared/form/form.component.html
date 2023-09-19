@@ -27,6 +27,7 @@
             <button type="button" role="button" class="ds-form-add-more btn btn-link"
                     title="{{'form.add' | translate}}"
                     attr.aria-label="{{'form.add' | translate}}"
+                    [hidden]="ouEmbargoAddMoreButton"
                     (click)="insertItem($event, group.context, group.context.groups.length)">
               <span><i class="fas fa-plus"></i> {{'form.add' | translate}}</span>
             </button>

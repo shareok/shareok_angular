@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, QueryList } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, QueryList } from '@angular/core';
 import { UntypedFormGroup } from '@angular/forms';
 import {
   DynamicFormControlComponent,
@@ -18,7 +18,7 @@ import {
   templateUrl: './dynamic-form-group.component.html',
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class DsDynamicFormGroupComponent extends DynamicFormControlComponent {
+export class DsDynamicFormGroupComponent extends DynamicFormControlComponent implements OnInit{
 
   @Input() formModel: DynamicFormControlModel[];
   @Input() formLayout: DynamicFormLayout;
@@ -40,4 +40,18 @@ export class DsDynamicFormGroupComponent extends DynamicFormControlComponent {
     super(layoutService, validationService);
   }
 
+  ngOnInit(): void {
+    if(this.model.id === 'accessConditionGroup') {
+      if(this.model.group.length === 3) {
+        for(let i=0; i<this.model.group.length; i++) {
+          if(this.model.group[i].id === 'endDate') {
+            this.model.group[i].hidden = true;
+          }
+          if(this.model.group[i].id === 'startDate') {
+            this.model.group[i].layout.grid.host = 'col-12';
+          }
+        }
+      }
+    }
+  }
 }

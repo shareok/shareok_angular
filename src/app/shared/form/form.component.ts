@@ -103,6 +103,8 @@ export class FormComponent implements OnDestroy, OnInit {
    */
   private subs: Subscription[] = [];
 
+  ouEmbargoAddMoreButton = false;
+
   constructor(private formService: FormService,
               protected changeDetectorRef: ChangeDetectorRef,
               private formBuilderService: FormBuilderService) {
@@ -144,7 +146,6 @@ export class FormComponent implements OnDestroy, OnInit {
   ngOnInit() {
     if (!this.formGroup) {
       this.formGroup = this.formBuilderService.createFormGroup(this.formModel);
-
     } else {
       this.formModel.forEach((model) => {
         if (this.parentFormModel) {
@@ -154,7 +155,6 @@ export class FormComponent implements OnDestroy, OnInit {
     }
 
     this.formService.initForm(this.formId, this.formModel, this.getFormGroupValidStatus());
-
     // TODO: take a look to the following method:
     // this.keepSync();
 
