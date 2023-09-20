@@ -1,5 +1,4 @@
 <div [hidden]="!(isAdmin() | async)">
-  isAdmin value: {{ (isAdmin() | async) }}
   <ng-template #rt let-listEntry="result" let-t="term">
     <ng-container
       [ngTemplateOutlet]="(listEntry.hasOtherInformation()) ? hasInfo : noInfo"
