@@ -1,8 +1,7 @@
-import { distinctUntilChanged, filter, map } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, take } from 'rxjs/operators';
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { AbstractControl, UntypedFormArray, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
-
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, combineLatest as observableCombineLatest } from 'rxjs';
 import {
   DynamicFormArrayModel,
   DynamicFormControlEvent,
@@ -18,6 +17,8 @@ import { hasValue, isNotEmpty, isNotNull, isNull } from '../empty.util';
 import { FormService } from './form.service';
 import { FormEntry, FormError } from './form.reducer';
 import { FormFieldMetadataValueObject } from './builder/models/form-field-metadata-value.model';
+import { FeatureID } from 'src/app/core/data/feature-authorization/feature-id';
+import { AuthorizationDataService } from 'src/app/core/data/feature-authorization/authorization-data.service';
 
 /**
  * The default form component.
@@ -103,11 +104,10 @@ export class FormComponent implements OnDestroy, OnInit {
    */
   private subs: Subscription[] = [];
 
-  ouEmbargoAddMoreButton = false;
-
   constructor(private formService: FormService,
               protected changeDetectorRef: ChangeDetectorRef,
-              private formBuilderService: FormBuilderService) {
+              private formBuilderService: FormBuilderService,
+              protected authorizationService: AuthorizationDataService) {
   }
 
   /**
@@ -357,4 +357,28 @@ export class FormComponent implements OnDestroy, OnInit {
     const control = group.controls[index] as UntypedFormControl;
     return { $event, context, control, group, model, type };
   }
+
+  isSubjectBtn(arrayContext: DynamicFormArrayModel): boolean {
+    return arrayContext.label === 'Library of Congress Subject';
+  }
+
+  isAdmin(): Observable<boolean> {
+    const isAdmin$ = observableCombineLatest([
+      this.authorizationService.isAuthorized(FeatureID.IsCollectionAdmin),
+      this.authorizationService.isAuthorized(FeatureID.IsCommunityAdmin),
+      this.authorizationService.isAuthorized(FeatureID.AdministratorOf),
+    ]).pipe(
+      map(([isCollectionAdmin, isCommunityAdmin, isSiteAdmin]) => {
+        return isCollectionAdmin || isCommunityAdmin || isSiteAdmin;
+      }),
+      take(1),
+    );
+
+    return observableCombineLatest([isAdmin$]).pipe(
+      map(([isAdmin]) => {
+        return isAdmin;
+      })
+    );
+  }
+
 }

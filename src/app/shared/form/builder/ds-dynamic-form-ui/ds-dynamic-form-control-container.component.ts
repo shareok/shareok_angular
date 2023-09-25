@@ -120,6 +120,8 @@ import { DYNAMIC_FORM_CONTROL_TYPE_RELATION_GROUP } from './ds-dynamic-form-cons
 import { FormFieldMetadataValueObject } from '../models/form-field-metadata-value.model';
 import { APP_CONFIG, AppConfig } from '../../../../../config/app-config.interface';
 import { itemLinksToFollow } from '../../../utils/relation-query.utils';
+import { AuthorizationDataService } from 'src/app/core/data/feature-authorization/authorization-data.service';
+import { FeatureID } from 'src/app/core/data/feature-authorization/feature-id';
 
 export function dsDynamicFormControlMapFn(model: DynamicFormControlModel): Type<DynamicFormControl> | null {
   switch (model.type) {
@@ -261,6 +263,7 @@ export class DsDynamicFormControlContainerComponent extends DynamicFormControlCo
     private formService: FormService,
     public formBuilderService: FormBuilderService,
     private submissionService: SubmissionService,
+    protected authorizationService: AuthorizationDataService,
     @Inject(APP_CONFIG) protected appConfig: AppConfig,
   ) {
     super(ref, componentFactoryResolver, layoutService, validationService, dynamicFormComponentService, relationService);
@@ -345,6 +348,10 @@ export class DsDynamicFormControlContainerComponent extends DynamicFormControlCo
         );
       }
     }
+  }
+
+  get displayAdminSubject(): boolean {
+    return this.model.type==='ONEBOX' && this.model.id==='dc_subject';
   }
 
   get isCheckbox(): boolean {
@@ -511,5 +518,24 @@ export class DsDynamicFormControlContainerComponent extends DynamicFormControlCo
     this.subs.push(this.item$.subscribe((item) => this.item = item));
     this.subs.push(collection$.subscribe((collection) => this.collection = collection));
 
+  }
+
+  isAdmin(): Observable<boolean> {
+    const isAdmin$ = observableCombineLatest([
+      this.authorizationService.isAuthorized(FeatureID.IsCollectionAdmin),
+      this.authorizationService.isAuthorized(FeatureID.IsCommunityAdmin),
+      this.authorizationService.isAuthorized(FeatureID.AdministratorOf),
+    ]).pipe(
+      map(([isCollectionAdmin, isCommunityAdmin, isSiteAdmin]) => {
+        return isCollectionAdmin || isCommunityAdmin || isSiteAdmin;
+      }),
+      take(1),
+    );
+
+    return observableCombineLatest([isAdmin$]).pipe(
+      map(([isAdmin]) => {
+        return isAdmin;
+      })
+    );
   }
 }

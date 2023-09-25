@@ -27,13 +27,12 @@
             <button type="button" role="button" class="ds-form-add-more btn btn-link"
                     title="{{'form.add' | translate}}"
                     attr.aria-label="{{'form.add' | translate}}"
-                    [hidden]="group.context.id=='accessConditions'"
+                    [hidden]="group.context.id=='accessConditions'||(isSubjectBtn(context) && !(isAdmin() | async))"
                     (click)="insertItem($event, group.context, group.context.groups.length)">
               <span><i class="fas fa-plus"></i> {{'form.add' | translate}}</span>
             </button>
           </div>
         </div>
-
         <!--Array with non repeatable items - Only discard button-->
         <div *ngIf="context.notRepeatable && context.showButtons && group.context.groups.length > 1"
              class="col-xs-2 d-flex flex-column justify-content-sm-start align-items-end">

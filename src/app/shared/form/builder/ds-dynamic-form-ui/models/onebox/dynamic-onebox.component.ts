@@ -293,24 +293,4 @@ export class DsDynamicOneboxComponent extends DsDynamicVocabularyComponent imple
       .filter((sub) => hasValue(sub))
       .forEach((sub) => sub.unsubscribe());
   }
-
-  isAdmin(): Observable<boolean> {
-    const isAdmin$ = combineLatest([
-      this.authorizationService.isAuthorized(FeatureID.IsCollectionAdmin),
-      this.authorizationService.isAuthorized(FeatureID.IsCommunityAdmin),
-      this.authorizationService.isAuthorized(FeatureID.AdministratorOf),
-    ]).pipe(
-      map(([isCollectionAdmin, isCommunityAdmin, isSiteAdmin]) => {
-        return isCollectionAdmin || isCommunityAdmin || isSiteAdmin;
-      }),
-      take(1),
-    );
-
-    return combineLatest([isAdmin$]).pipe(
-      map(([isAdmin]) => {
-        return isAdmin;
-      })
-    );
-  }
-
 }
