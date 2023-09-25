@@ -76,5 +76,6 @@
   "submission.sections.upload.form.access-condition-label": "Embargo",
   "submission.sections.upload.form.access-condition-hint": "By default, your work will be open access. Use this dropdown menu to apply an embargo, if applicable",
   "submission.sections.upload.form.from-hint": "Select the date from which access will be allowed",
-  "submission.sections.upload.form.from-label": "Embargo from",
+  "submission.sections.upload.form.from-label": "Embargo until",
+  "submission.sections.upload.form.from-placeholder": "Until",
 }

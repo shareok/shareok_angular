@@ -4444,11 +4444,11 @@
 
   "submission.sections.upload.form.date-required-until": "Grant access until date is required.",
 
-  "submission.sections.upload.form.from-label": "Embargo from",
+  "submission.sections.upload.form.from-label": "Embargo until",
 
   "submission.sections.upload.form.from-hint": "Select the date from which access will be allowed",
 
-  "submission.sections.upload.form.from-placeholder": "From",
+  "submission.sections.upload.form.from-placeholder": "Until",
 
   "submission.sections.upload.form.group-label": "Group",
 
