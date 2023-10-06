@@ -51,11 +51,16 @@ export class ItemPageCclicenseFieldComponent implements OnInit, AfterViewInit {
   ];
 
   ngOnInit(): void {
-    this.cclUri = this.item?.allMetadata('dc.rights.uri')[0].value;
-    this.cclicense = this.item?.allMetadata('dc.rights')[0].value;
-    this.iconSrc = this.getIcon();
-    this.hasCCLicenses = !this.cclUri? false: true;
-
+    if(this.item?.allMetadata('dc.rights.uri').length > 0) {
+      this.cclUri = this.item?.allMetadata('dc.rights.uri')[0].value;
+    }
+    if(this.item?.allMetadata('dc.rights').length > 0) {
+      this.cclicense = this.item?.allMetadata('dc.rights')[0].value;
+    }
+    if(this.cclUri && this.cclicense) {
+      this.hasCCLicenses = true;
+      this.iconSrc = this.getIcon();
+    }
   }
 
   getIcon() {

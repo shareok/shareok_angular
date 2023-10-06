@@ -7,14 +7,15 @@ import { HeaderComponent } from './app/header/header.component';
 import { HeaderNavbarWrapperComponent } from './app/header-nav-wrapper/header-navbar-wrapper.component';
 import { RootModule } from '../../app/root.module';
 import { NavbarModule } from '../../app/navbar/navbar.module';
-import { SharedBrowseByModule } from '../../app/shared/browse-by/shared-browse-by.module';
-import { ResultsBackButtonModule } from '../../app/shared/results-back-button/results-back-button.module';
 import { ItemPageModule } from '../../app/item-page/item-page.module';
 import { UntypedItemComponent } from './app/item-page/simple/item-types/untyped-item/untyped-item.component';
 import { ItemSharedModule } from '../../app/item-page/item-shared.module';
+import { SharedBrowseByModule } from '../../app/shared/browse-by/shared-browse-by.module';
+import { ResultsBackButtonModule } from '../../app/shared/results-back-button/results-back-button.module';
+import { DsoPageModule } from '../../app/shared/dso-page/dso-page.module';
 import { AltmetricBadgeComponent } from './app/item-page/simple/item-types/untyped-item/altmetric-badge/altmetric-badge.component';
 import { ItemPageCclicenseFieldComponent } from './app/item-page/simple/item-types/untyped-item/cclicense-field/item-page-cclicense-field.component';
-import { DsoPageModule } from "../../app/shared/dso-page/dso-page.module";
+
 
 /**
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
