@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ThemedComponent } from '../../theme-support/themed.component';
 import { SearchSettingsComponent } from './search-settings.component';
 import { SortOptions } from '../../../core/cache/models/sort-options.model';
+import { ViewMode } from 'src/app/core/shared/view-mode.model';
 
 /**
  * Themed wrapper for SearchSettingsComponent
@@ -14,10 +15,11 @@ import { SortOptions } from '../../../core/cache/models/sort-options.model';
 export class ThemedSearchSettingsComponent extends ThemedComponent<SearchSettingsComponent> {
   @Input() currentSortOption: SortOptions;
   @Input() sortOptionsList: SortOptions[];
+  @Input() currentConfiguration;
 
 
   protected inAndOutputNames: (keyof SearchSettingsComponent & keyof this)[] = [
-    'currentSortOption', 'sortOptionsList'];
+    'currentSortOption', 'sortOptionsList', 'currentConfiguration'];
 
   protected getComponentName(): string {
     return 'SearchSettingsComponent';
