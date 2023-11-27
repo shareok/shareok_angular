@@ -50,3 +50,13 @@
     <button type="button" class="btn btn-danger" (click)="c('ok')">{{ 'submission.sections.upload.delete.confirm.submit' | translate }}</button>
   </div>
 </ng-template>
+
+<div>&nbsp;</div>
+<div>
+  <button class="btn btn btn-primary"
+  [attr.aria-label]="'submission.sections.upload.edit.title' | translate"
+  title="{{ 'submission.sections.upload.edit.title' | translate }}"
+  (click)="$event.preventDefault();editBitstreamData();">
+  Embargo File
+  </button>
+</div>
