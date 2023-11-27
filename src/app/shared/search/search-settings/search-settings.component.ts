@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { SearchService } from '../../../core/shared/search/search.service';
 import { SortDirection, SortOptions } from '../../../core/cache/models/sort-options.model';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,7 +15,7 @@ import { PaginationService } from '../../../core/pagination/pagination.service';
 /**
  * This component represents the part of the search sidebar that contains the general search settings.
  */
-export class SearchSettingsComponent implements OnInit {
+export class SearchSettingsComponent {
   /**
    * The current sort option used
    */
@@ -26,20 +26,11 @@ export class SearchSettingsComponent implements OnInit {
    */
   @Input() sortOptionsList: SortOptions[];
 
-  @Input() currentConfiguration;
-
   constructor(private service: SearchService,
               private route: ActivatedRoute,
               private router: Router,
               private paginationService: PaginationService,
               @Inject(SEARCH_CONFIG_SERVICE) public searchConfigurationService: SearchConfigurationService) {
-  }
-
-  ngOnInit(): void {
-    if(this.currentConfiguration === 'workspace') {
-      this.currentSortOption = new SortOptions('dc.date.issued', SortDirection.DESC);
-      this.workflowInitloadOrder();
-    }
   }
 
   /**
@@ -51,14 +42,6 @@ export class SearchSettingsComponent implements OnInit {
     this.paginationService.updateRoute(this.searchConfigurationService.paginationID, {
       sortField: values[0],
       sortDirection: values[1] as SortDirection,
-      page: 1
-    });
-  }
-
-  workflowInitloadOrder() {
-    this.paginationService.updateRoute(this.searchConfigurationService.paginationID, {
-      sortField: 'dc.date.issued',
-      sortDirection: SortDirection.DESC,
       page: 1
     });
   }
