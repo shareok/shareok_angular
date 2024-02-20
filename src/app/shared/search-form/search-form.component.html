@@ -5,7 +5,7 @@
                 <button class="scope-button btn btn-outline-secondary text-truncate"
                         [ngbTooltip]="dsoNameService.getName(selectedScope | async)" type="button"
                         (click)="openScopeModal()">
-                  {{dsoNameService.getName(selectedScope | async) || ('search.form.scope.all' | translate)}}
+                  {{dsoNameService.getName(selectedScope | async) || ('search.form.scope.all' | translate)}}<sup>TM</sup>
                 </button>
             </div>
             <input type="text" [(ngModel)]="query" name="query" class="form-control"

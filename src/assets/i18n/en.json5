@@ -4436,7 +4436,7 @@
 
   "submission.sections.upload.form.access-condition-label": "Embargo",
 
-  "submission.sections.upload.form.access-condition-hint": "By default, your work will be open access. Use this dropdown menu to apply an embargo, if applicable",
+  "submission.sections.upload.form.access-condition-hint": "By default, your work will be open access. If the Graduate College has approved your embargo request, use this dropdown menu to apply an embargo",
 
   "submission.sections.upload.form.date-required": "Date is required.",
 
@@ -4444,7 +4444,7 @@
 
   "submission.sections.upload.form.date-required-until": "Grant access until date is required.",
 
-  "submission.sections.upload.form.from-label": "Embargo until",
+  "submission.sections.upload.form.from-label": "Date Embargo Will Expire",
 
   "submission.sections.upload.form.from-hint": "Select the date from which access will be allowed",
 
@@ -5284,7 +5284,7 @@
 
   "info.feedback.contact.title": "Contact Us",
 
-  "info.feedback.contact.info": "SHAREOK administrators may be contacted at:",
+  "info.feedback.contact.info": "administrators may be contacted at:",
 
   "info.feedback.contact.institution_osu": "Oklahoma State University",
 
@@ -5335,4 +5335,12 @@
   "browse.metadata.department": "College/Department",
 
   "browse.metadata.ispartofseries": "Series",
+
+  "info.feedback.contact.info_name": "SHAREOK",
+
+  "info.feedback.info1": "Thanks for sharing your feedback about ",
+
+  "info.feedback.info_name": "SHAREOK",
+
+  "info.feedback.info2": ". Your comments are appreciated!",
 }
